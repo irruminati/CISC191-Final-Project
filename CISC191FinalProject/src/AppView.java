@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import javax.swing.*;
 
 /**
@@ -6,14 +7,37 @@ import javax.swing.*;
  * @author Rumi Chadwick
  * @author Ale Hernandez
  * 
- *         References:
- *         Morelli, R., & Walde, R. (2016).
- *         Java, Java, Java: Object-Oriented Problem Solving
- *         https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
- *
  *         Version: 2026-04-13
  */
 public class AppView extends JFrame
 {
+	private JPanel menuPage;
+	private JLabel info;
 
+	private JPanel swipePage;
+	private JButton yesBtn;
+	private JButton noBtn;
+
+	private JPanel likesPage;
+	private JButton backBtn;
+	private JPanel likes;
+
+	public AppView()
+	{
+		super();
+		setMinimumSize(new Dimension(800, 800)); // Minimum size of window
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close app when
+																// window is
+																// closed
+		this.setTitle("Adopt Me"); // App name at the top
+
+		// Menu //
+		menuPage = new JPanel();
+
+		// Swiping //
+		swipePage = new JPanel();
+
+		// Likes Library //
+		likesPage = new JPanel();
+	}
 }
