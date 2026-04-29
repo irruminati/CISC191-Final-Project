@@ -43,8 +43,5 @@ public class Bird extends Pet
 			String bio, BufferedImage photo)
 	{
 		super(name, age, intakeDate, bio, photo);
-		
-		setSpecies("Bird");
 	}
-	
 }

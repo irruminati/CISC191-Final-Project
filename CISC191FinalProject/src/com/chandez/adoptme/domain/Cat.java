@@ -45,8 +45,6 @@ private boolean vaccinated;
 			String bio, BufferedImage photo)
 	{
 		super(name, age, intakeDate, bio, photo);
-		
-		setSpecies("Cat");
 	}
 	
 	public boolean isVaccinated()

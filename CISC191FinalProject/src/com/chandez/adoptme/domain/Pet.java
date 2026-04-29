@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 public abstract class Pet
 {
-	private String species;
+	private String type;
 	private String name;
 	private int age;
 	private LocalDate intakeDate;
@@ -35,9 +35,9 @@ public abstract class Pet
 	/**
 	 * @return the type of animal this Pet is
 	 */
-	public String getSpecies()
+	public String getType()
 	{
-		return species;
+		return type;
 	}
 
 	/*
@@ -91,9 +91,9 @@ public abstract class Pet
 	/**
 	 * Update the species of the Pet
 	 */
-	public void setSpecies(String species)
+	public void setType(String type)
 	{
-		this.species = species;
+		this.type = type;
 	}
 
 	/**

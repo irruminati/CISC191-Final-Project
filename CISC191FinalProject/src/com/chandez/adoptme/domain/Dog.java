@@ -45,8 +45,6 @@ public class Dog extends Pet
 			String bio, BufferedImage photo)
 	{
 		super(name, age, intakeDate, bio, photo);
-		
-		setSpecies("Dog");
 	}
 	
 	public boolean isVaccinated()
