@@ -1,4 +1,4 @@
-package com.chandez;
+package com.chandez.adoptme.domain;
 
 import java.util.LinkedList;
 import java.util.Queue;

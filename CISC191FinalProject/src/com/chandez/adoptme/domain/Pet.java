@@ -1,3 +1,4 @@
+package com.chandez.adoptme.domain;
 
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
@@ -21,10 +22,9 @@ public abstract class Pet
 	private BufferedImage photo;
 	private boolean liked;
 
-	public Pet(String species, String name, int age, LocalDate intakeDate,
-			String bio, BufferedImage photo)
+	public Pet(String name, int age, LocalDate intakeDate, String bio,
+			BufferedImage photo)
 	{
-		this.species = species;
 		this.name = name;
 		this.age = age;
 		this.intakeDate = intakeDate;
@@ -35,61 +35,102 @@ public abstract class Pet
 	/**
 	 * @return the type of animal this Pet is
 	 */
-	public String getSpecies();
+	public String getSpecies()
+	{
+		return species;
+	}
 
 	/*
 	 * @return the name of the Pet
 	 */
-	public String getName();
+	public String getName()
+	{
+		return name;
+	}
 
 	/**
 	 * @return the age of the Pet
 	 */
-	public int getAge();
+	public int getAge()
+	{
+		return age;
+	}
 
 	/**
 	 * @return the intake date of the Pet
 	 */
-	public LocalDate getIntakeDate();
+	public LocalDate getIntakeDate()
+	{
+		return intakeDate;
+	}
 
 	/**
 	 * @return the biography of the Pet
 	 */
-	public String getBio();
+	public String getBio()
+	{
+		return bio;
+	}
 
 	/**
 	 * @return the profile photo of the Pet
 	 */
-	public BufferedImage getPhoto();
+	public BufferedImage getPhoto()
+	{
+		return photo;
+	}
 
 	/**
 	 * @return whether or not the Pet has been "liked" by the user
 	 */
-	public boolean isLiked();
+	public boolean isLiked()
+	{
+		return liked;
+	}
+
+	/**
+	 * Update the species of the Pet
+	 */
+	public void setSpecies(String species)
+	{
+		this.species = species;
+	}
 
 	/**
 	 * Update the age of the Pet
 	 */
-	public void setAge(int age);
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
 
 	/**
 	 * Update the biography of the Pet
 	 * 
 	 * @param bio the new biography
 	 */
-	public void setBio(String bio);
+	public void setBio(String bio)
+	{
+		this.bio = bio;
+	}
 
 	/**
 	 * Update the profile photo of the Pet
 	 * 
 	 * @param photo the new profile picture
 	 */
-	public void setPhoto(BufferedImage photo);
+	public void setPhoto(BufferedImage photo)
+	{
+		this.photo = photo;
+	}
 
 	/**
 	 * Like/Unlike the Pet to add or remove it from the liked library
 	 * 
 	 * @param liked true if Pet is liked, false otherwise
 	 */
-	public void setLiked(boolean liked);
+	public void setLiked(boolean liked)
+	{
+		this.liked = liked;
+	}
 }
