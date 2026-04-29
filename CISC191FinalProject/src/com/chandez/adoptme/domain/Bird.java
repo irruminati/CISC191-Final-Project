@@ -19,13 +19,32 @@
 */
 package com.chandez.adoptme.domain;
 
+import java.awt.image.BufferedImage;
+import java.time.LocalDate;
+
 /**
  * Purpose: The reponsibility of Bird is ...
  *
  * Bird is-a ...
  * Bird is ...
  */
-public class Bird
-{
-
+public class Bird extends Pet
+{	
+	/**
+	 * Purpose: 
+	 * @param species
+	 * @param name
+	 * @param age
+	 * @param intakeDate
+	 * @param bio
+	 * @param photo
+	 */
+	public Bird(String name, int age, LocalDate intakeDate,
+			String bio, BufferedImage photo)
+	{
+		super(name, age, intakeDate, bio, photo);
+		
+		setSpecies("Bird");
+	}
+	
 }

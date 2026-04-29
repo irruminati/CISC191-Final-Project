@@ -19,13 +19,43 @@
 */
 package com.chandez.adoptme.domain;
 
+import java.awt.image.BufferedImage;
+import java.time.LocalDate;
+
 /**
  * Purpose: The reponsibility of Cat is ...
  *
  * Cat is-a ...
  * Cat is ...
  */
-public class Cat
+public class Cat extends Pet
 {
-
+private boolean vaccinated;
+	
+	/**
+	 * Purpose: 
+	 * @param species
+	 * @param name
+	 * @param age
+	 * @param intakeDate
+	 * @param bio
+	 * @param photo
+	 */
+	public Cat(String name, int age, LocalDate intakeDate,
+			String bio, BufferedImage photo)
+	{
+		super(name, age, intakeDate, bio, photo);
+		
+		setSpecies("Cat");
+	}
+	
+	public boolean isVaccinated()
+	{
+		return vaccinated;
+	}
+	
+	public void isVaccinated(boolean vaccinated)
+	{
+		this.vaccinated = vaccinated;
+	}
 }

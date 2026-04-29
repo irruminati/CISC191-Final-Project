@@ -30,6 +30,7 @@ import java.time.LocalDate;
  */
 public class Dog extends Pet
 {
+	private boolean vaccinated;
 	
 	/**
 	 * Purpose: 
@@ -47,4 +48,15 @@ public class Dog extends Pet
 		
 		setSpecies("Dog");
 	}
+	
+	public boolean isVaccinated()
+	{
+		return vaccinated;
+	}
+	
+	public void isVaccinated(boolean vaccinated)
+	{
+		this.vaccinated = vaccinated;
+	}
+	
 }
