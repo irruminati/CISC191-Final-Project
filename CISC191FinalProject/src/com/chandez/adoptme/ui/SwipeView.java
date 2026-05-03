@@ -45,28 +45,27 @@ public class SwipeView extends JPanel
 
 		// Create basic info section //
 		basicInfo = new JPanel();
-		
+
 		nameAndAge = new JLabel();
 		basicInfo.add(nameAndAge);
-		
+
 		breed = new JLabel();
 		basicInfo.add(breed);
-		
+
 		setBasicInfo(pet);
 
-		
 		// Create extended info section
 		extInfo = new JPanel();
-		
+
 		bioHeader = new JLabel();
 		extInfo.add(bioHeader);
-		
+
 		bioParagraph = new JLabel();
 		extInfo.add(bioParagraph);
-		
+
 		setExtInfo(pet);
 
-		// Create the buttons // 
+		// Create the buttons //
 		yesButton = new JButton("Yes");
 		noButton = new JButton("No");
 
