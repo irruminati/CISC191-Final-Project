@@ -22,13 +22,13 @@ public class PetRepository
 		this.petList = petList;
 	}
 
-	// /**
-	// * @return the current Pet in the swiping list
-	// */
-	// public Pet getCurrPet()
-	// {
-	// return petList.peek();
-	// }
+	/**
+	 * @return the current Pet in the swiping list
+	 */
+	public Pet getCurrPet()
+	{
+		return petList.peek();
+	}
 
 	/**
 	 * Move to the next Pet, and move the current Pet to the end of the list.
