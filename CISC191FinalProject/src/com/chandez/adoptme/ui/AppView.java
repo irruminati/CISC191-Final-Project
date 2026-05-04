@@ -1,5 +1,6 @@
 package com.chandez.adoptme.ui;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import javax.swing.*;
 
@@ -23,12 +24,16 @@ public class AppView extends JFrame
 	public AppView()
 	{
 		super();
-		setMinimumSize(new Dimension(800, 800)); // Minimum size of window
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close app when
-														// window is
-														// closed
-		setTitle("Adopt Me"); // App name at the top
+		
+		// Minimum size of window
+		setMinimumSize(new Dimension(800, 800)); 
+		// Close app when window is closed
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		// App name at the top
+		setTitle("Adopt Me"); 
 
+		setLayout(new CardLayout());
+		
 		// Menu //
 		menuPage = new JPanel();
 
@@ -37,10 +42,14 @@ public class AppView extends JFrame
 
 		// Likes Library //
 		likesPage = new JPanel();
+		
+		setVisible(true);
 	}
 
 	public void setSwipePage(SwipeView swipeView)
 	{
 		swipePage = swipeView;
+		
+		add(swipeView);
 	}
 }
