@@ -22,15 +22,17 @@ public class AppView extends JFrame
 	private JPanel likesPage;
 	private JButton backButton;
 	private JPanel likes;
+	private JPanel mainPanel;
 
 	private CardLayout cl;
 
 	public AppView()
 	{
 		super();
-
+		
+		mainPanel = new JPanel();
 		cl = new CardLayout();
-		setLayout(cl);
+		mainPanel.setLayout(cl);
 
 		// Minimum size of window
 		setMinimumSize(new Dimension(800, 800));
@@ -47,6 +49,8 @@ public class AppView extends JFrame
 
 		// Likes Library //
 		likesPage = new JPanel();
+		
+		add(mainPanel);
 
 		setVisible(true);
 	}
@@ -55,10 +59,8 @@ public class AppView extends JFrame
 	{
 		swipePage = swipeView;
 
-		add(swipeView);
-
-		cl.addLayoutComponent(swipeView, "Swipe View");
-		cl.show(swipeView, "Swipe View");
+		mainPanel.add(swipePage, "Swipe View");
+		cl.show(mainPanel, "Swipe View");
 	}
 
 	// TEMPORARY
