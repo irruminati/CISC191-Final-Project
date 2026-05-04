@@ -4,6 +4,8 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import javax.swing.*;
 
+import com.chandez.adoptme.domain.Pet;
+
 /**
  * Lead Author(s):
  * 
@@ -57,5 +59,11 @@ public class AppView extends JFrame
 
 		cl.addLayoutComponent(swipeView, "Swipe View");
 		cl.show(swipeView, "Swipe View");
+	}
+
+	// TEMPORARY
+	public void updateUI(Pet pet)
+	{
+		swipePage.updateUI(pet);
 	}
 }
