@@ -18,7 +18,8 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-import com.chandez.adoptme.domain.Pet;
+import com.chandez.adoptme.controllers.*;
+import com.chandez.adoptme.domain.*;
 
 /**
  * Purpose:
@@ -39,11 +40,14 @@ public class SwipeView extends JPanel
 	private JButton yesButton;
 	private JButton noButton;
 
-	public SwipeView(Pet pet)
+	public SwipeView(PetRepository petRepo)
 	{
 		super(new BorderLayout());
-		setMinimumSize(new Dimension(800, 800)); 
-		
+		setMinimumSize(new Dimension(800, 800));
+
+		// TODO Maybe should change this to adhere to MVC ??
+		Pet pet = petRepo.getCurrPet();
+
 		// Create the photo //
 		photo = new JLabel();
 		setPhoto(pet);
@@ -72,13 +76,15 @@ public class SwipeView extends JPanel
 
 		// Create the buttons //
 		JPanel buttonPanel = new JPanel();
-		
+
 		yesButton = new JButton("Yes");
 		buttonPanel.add(yesButton);
-		
+		yesButton.addActionListener(new SwipePageListener(petRepo, this));
+
 		noButton = new JButton("No");
 		buttonPanel.add(noButton);
-		
+		noButton.addActionListener(new SwipePageListener(petRepo, this));
+
 		add(buttonPanel, BorderLayout.SOUTH);
 
 		// Add pfp to the center
@@ -88,12 +94,12 @@ public class SwipeView extends JPanel
 		// Add extended bio to the right of the photo
 		add(extInfo, BorderLayout.EAST);
 	}
-	
+
 	public JButton getYesButton()
 	{
 		return yesButton;
 	}
-	
+
 	public JButton getNoButton()
 	{
 		return noButton;
@@ -141,7 +147,7 @@ public class SwipeView extends JPanel
 		// TODO
 	}
 
-	public void updateUI(Pet pet)
+	public void updatePetView(Pet pet)
 	{
 		// Update photo
 		setPhoto(pet);

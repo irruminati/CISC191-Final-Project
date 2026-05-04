@@ -21,21 +21,14 @@
  */
 package com.chandez.adoptme;
 
-import com.chandez.adoptme.domain.Pet;
-import com.chandez.adoptme.domain.PetRepository;
+import com.chandez.adoptme.domain.*;
+import com.chandez.adoptme.ui.*;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.LinkedList;
 import java.util.Queue;
-
 import javax.swing.JFrame;
-
-import com.chandez.adoptme.domain.Bird;
-import com.chandez.adoptme.domain.Cat;
-import com.chandez.adoptme.domain.Dog;
-import com.chandez.adoptme.ui.AppView;
-import com.chandez.adoptme.ui.SwipeView;
 
 public class App
 {
@@ -56,18 +49,15 @@ public class App
 		Pet testPet3 = new Bird("Ole", 15, testDate3, "", null);
 		testPet3.setType("Bird");
 
+		// Create test repository
 		LinkedList<Pet> petList = new LinkedList<Pet>();
-
 		PetRepository petRepo = new PetRepository(petList);
 
+		// Add testPets to the test repository
 		petRepo.addPet(testPet);
 		petRepo.addPet(testPet2);
 		petRepo.addPet(testPet3);
 
-		AppView appView = new AppView();
-		SwipeView swipeView = new SwipeView(testPet);
-		appView.setSwipePage(swipeView);
-
-		appView.updateUI(testPet3);
+		AppView appView = new AppView(petRepo);
 	}
 }

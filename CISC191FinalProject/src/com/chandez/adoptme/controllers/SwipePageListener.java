@@ -51,6 +51,7 @@ public class SwipePageListener implements ActionListener
 			petList.getCurrPet().setLiked(true);
 		}
 
-		view.updateUI(petList.nextPet());
+		// Move to the next Pet and update the UI with its info
+		view.updatePetView(petList.nextPet());
 	}
 }

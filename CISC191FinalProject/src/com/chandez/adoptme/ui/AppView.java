@@ -1,10 +1,11 @@
 package com.chandez.adoptme.ui;
 
+import com.chandez.adoptme.controllers.*;
+import com.chandez.adoptme.domain.*;
+
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import javax.swing.*;
-
-import com.chandez.adoptme.domain.Pet;
 
 /**
  * Lead Author(s):
@@ -16,23 +17,26 @@ import com.chandez.adoptme.domain.Pet;
  */
 public class AppView extends JFrame
 {
-	private JPanel menuPage;
-	private SwipeView swipePage;
-
-	private JPanel likesPage;
-	private JButton backButton;
-	private JPanel likes;
 	private JPanel mainPanel;
-
+	private SwipeView swipeView;
 	private CardLayout cl;
 
-	public AppView()
+	// private JPanel menuView;
+	// private JPanel likesView;
+
+	public AppView(PetRepository petRepo)
 	{
 		super();
-		
-		mainPanel = new JPanel();
+
+		// Format AppView with CardLayout using mainPanel as the container //
 		cl = new CardLayout();
-		mainPanel.setLayout(cl);
+		mainPanel = new JPanel(cl);
+		add(mainPanel);
+
+		swipeView = new SwipeView(petRepo);
+
+		mainPanel.add(swipeView, "Swipe View");
+		cl.show(mainPanel, "Swipe View");
 
 		// Minimum size of window
 		setMinimumSize(new Dimension(800, 800));
@@ -42,30 +46,14 @@ public class AppView extends JFrame
 		setTitle("Adopt Me");
 
 		// Menu //
-		menuPage = new JPanel();
+		// menuView = new JPanel();
 
 		// Swiping //
-		// swipePage = new SwipeView();
+		// swipeView = new SwipeView();
 
 		// Likes Library //
-		likesPage = new JPanel();
-		
-		add(mainPanel);
+		// likesView = new JPanel();
 
 		setVisible(true);
-	}
-
-	public void setSwipePage(SwipeView swipeView)
-	{
-		swipePage = swipeView;
-
-		mainPanel.add(swipePage, "Swipe View");
-		cl.show(mainPanel, "Swipe View");
-	}
-
-	// TEMPORARY
-	public void updateUI(Pet pet)
-	{
-		swipePage.updateUI(pet);
 	}
 }
