@@ -35,7 +35,7 @@ public class SwipeView extends JPanel
 	private JPanel extInfo; // Extended info; ex) biography, intake date, vax
 							// status, etc.
 	private JLabel bioHeader;
-	private JLabel bioParagraph;
+	private JTextArea bioParagraph;
 
 	private JButton yesButton;
 	private JButton noButton;
@@ -69,7 +69,8 @@ public class SwipeView extends JPanel
 		bioHeader = new JLabel();
 		extInfo.add(bioHeader);
 
-		bioParagraph = new JLabel();
+		bioParagraph = new JTextArea();
+		bioParagraph.setEditable(false);
 		extInfo.add(bioParagraph);
 
 		setExtInfo(pet);
