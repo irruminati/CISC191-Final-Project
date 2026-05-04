@@ -23,6 +23,17 @@ public class PetRepository
 	}
 
 	/**
+	 * Add a Pet to the end of the list, eventually this will be called from the
+	 * file reader and create pets from text info
+	 * 
+	 * @param pet the Pet to be added
+	 */
+	public void addPet(Pet pet)
+	{
+		petList.add(pet);
+	}
+
+	/**
 	 * @return the current Pet in the swiping list
 	 */
 	public Pet getCurrPet()
