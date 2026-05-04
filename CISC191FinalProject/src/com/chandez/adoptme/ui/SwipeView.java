@@ -39,6 +39,8 @@ public class SwipeView extends JPanel
 
 	public SwipeView(Pet pet)
 	{
+		super();
+		
 		// Create the photo //
 		photo = new JLabel();
 		setPhoto(pet);
