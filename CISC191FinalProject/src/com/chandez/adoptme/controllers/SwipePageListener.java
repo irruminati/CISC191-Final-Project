@@ -34,13 +34,12 @@ public class SwipePageListener implements ActionListener
 	private JButton yesButton;
 	private JButton noButton;
 
-	public SwipePageListener(PetRepository petList, SwipeView view,
-			JButton yesButton, JButton noButton)
+	public SwipePageListener(PetRepository petList, SwipeView view)
 	{
 		this.petList = petList;
 		this.view = view;
-		this.yesButton = yesButton;
-		this.noButton = noButton;
+		this.yesButton = view.getYesButton();
+		this.noButton = view.getNoButton();
 	}
 
 	@Override

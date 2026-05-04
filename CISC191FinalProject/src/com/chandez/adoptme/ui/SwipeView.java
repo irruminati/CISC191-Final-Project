@@ -68,15 +68,32 @@ public class SwipeView extends JPanel
 		setExtInfo(pet);
 
 		// Create the buttons //
+		JPanel buttonPanel = new JPanel();
+		
 		yesButton = new JButton("Yes");
+		buttonPanel.add(yesButton);
+		
 		noButton = new JButton("No");
+		buttonPanel.add(noButton);
+		
+		add(buttonPanel, BorderLayout.SOUTH);
 
 		// Add pfp to the center
 		add(photo);
 		// Add name and basic info under the photo
-		add(basicInfo, BorderLayout.SOUTH);
+		add(basicInfo);
 		// Add extended bio to the right of the photo
 		add(extInfo, BorderLayout.EAST);
+	}
+	
+	public JButton getYesButton()
+	{
+		return yesButton;
+	}
+	
+	public JButton getNoButton()
+	{
+		return noButton;
 	}
 
 	/**
