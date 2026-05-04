@@ -1,0 +1,18 @@
+Dog, Gibby, 2, 2024-12-06, "Energetic and funny-looking", "/Users/alehzp/Downloads/_EOPS_FA_PR_2026.png"
+Dog, Finn, 2, 2024-12-06, "Calm and clingy", image2 
+Cat, Kuri, 12, 2013-05-20, "Lazy and personable", image3
+Dog, Gordon, 4, 2022-03-13, "Jumpy and loud", image4
+Cat, Daisy, 12, 2014-02-23, "Quiet and sleepy", image5 
+Cat, Hamilton, 1, 2025-12-07, "Crazy and tiny", image6
+Dog, Teddy, 15, 2010-12-12, "Loyal and old", image7
+Dog, Princess, 16, 2010-01-25, "Small and licks", image8
+Dog, Baxter, 16, 2010-02-28, "Small yellow and anxious", image9
+Dog, Obi, 2, 2024-05-04, "Has black spots very playfull and full of enegry", image10
+Dog, Valerie, 7, 2018-09-23, "Smart and athelticand a diva", image11
+Bird, Ahoy, 9, 2016-10-08, "Annoying and talkative", image12
+Bird, Lady, 10, 2016-01-09, "Softie and loves cookies", image13
+Dog, Peyton, 1, 2025-12-04, "Loyal and lovely and good cuddles", image14
+Dog, Aang, 1, 2025-08-20, "Nice and funny", image15
+Dog, Sammy, 13, 2012-11-07, "Quiet and scaredy cat", image16
+Bird, Petunia, 4, 2022-04-21, "Likes to sing loudly and likes naps", image17
+Cat, Walle, 5, 2020-06-16, "Undisturbed but likes to disturb", image18
