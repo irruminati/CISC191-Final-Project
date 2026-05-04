@@ -16,6 +16,8 @@ package com.chandez.adoptme.ui;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import com.chandez.adoptme.domain.Pet;
 
 /**
@@ -39,7 +41,8 @@ public class SwipeView extends JPanel
 
 	public SwipeView(Pet pet)
 	{
-		super();
+		super(new BorderLayout());
+		setMinimumSize(new Dimension(800, 800)); 
 		
 		// Create the photo //
 		photo = new JLabel();
