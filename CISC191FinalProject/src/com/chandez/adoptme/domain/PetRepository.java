@@ -61,9 +61,18 @@ public class PetRepository
 	 * 
 	 * @return the current Pet in the list
 	 */
-	public Pet nextPet()
+	public Pet nextPet(boolean liked)
 	{
-		petList.add(petList.remove());
+		// Remove the current Pet from the top of the list
+		Pet prevPet = petList.remove();
+
+		// If the user "liked" the Pet, add it back to the end of the list
+		if (liked)
+		{
+			petList.add(prevPet);
+		}
+
+		// Return the next Pet in the list
 		return petList.peek();
 	}
 }

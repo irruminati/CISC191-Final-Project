@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import com.chandez.adoptme.domain.Pet;
 import com.chandez.adoptme.domain.PetRepository;
 import com.chandez.adoptme.ui.SwipeView;
 
@@ -41,17 +42,22 @@ public class SwipePageListener implements ActionListener
 		this.yesButton = view.getYesButton();
 		this.noButton = view.getNoButton();
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
+		Pet currPet = petList.getCurrPet();
 		// If the yes button is pressed, change that Pet's like status to true
 		if (e.getSource() == yesButton)
 		{
-			petList.getCurrPet().setLiked(true);
+			currPet.setLiked(true);
+		}
+		else if (e.getSource() == noButton)
+		{
+			currPet.setLiked(false);
 		}
 
 		// Move to the next Pet and update the UI with its info
-		view.updatePetView(petList.nextPet());
+		view.updatePetView(petList.nextPet(currPet.isLiked()));
 	}
 }
