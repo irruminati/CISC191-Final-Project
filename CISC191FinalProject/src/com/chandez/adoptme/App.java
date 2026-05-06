@@ -1,42 +1,46 @@
 /**
  * Lead Author(s):
  * 
- * @author rumichadwick; student ID
- * @author Full name; student ID
- *         <<Add additional lead authors here>>
+ * @author Rumi Chadwick
+ * @author Ale Hernandez
  *
  *         Other Contributors:
- *         Full name; student ID or contact information if not in class
- *         <<Add additional contributors (mentors, tutors, friends) here, with
- *         contact information>>
+ *         Alex Chow
  *
- *         References:
- *         Morelli, R., & Walde, R. (2016).
- *         Java, Java, Java: Object-Oriented Problem Solving
- *         https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
- *
- *         <<Add more references here>>
- *
- *         Version: 2026-04-29
+ *         Version: 2026-05-06
  */
 package com.chandez.adoptme;
 
 import com.chandez.adoptme.domain.*;
 import com.chandez.adoptme.ui.*;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class App
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws MalformedURLException
 	{
 		// TEST PET 1
 		LocalDate testDate = LocalDate.of(2026, Month.JANUARY, 25);
-		Pet testPet = new Dog("Felix", 3, testDate, "", null);
+
+		URL felix = new URL(
+				"https://images.dog.ceo//breeds//mastiff-tibetan//n02108551_1409.jpg");
+		ImageIcon img = new ImageIcon(felix);
+
+		// ImageIcon img = new ImageIcon("./images/kuri.JPG");
+
+		Pet testPet = new Dog("Felix", 3, testDate, "", img);
 		testPet.setType("Dog");
 
 		// TEST PET 2

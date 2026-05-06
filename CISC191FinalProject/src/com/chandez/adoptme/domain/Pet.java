@@ -1,7 +1,8 @@
 package com.chandez.adoptme.domain;
 
-import java.awt.image.BufferedImage;
 import java.time.LocalDate;
+
+import javax.swing.ImageIcon;
 
 /**
  * Lead Author(s):
@@ -19,11 +20,11 @@ public abstract class Pet
 	private int age;
 	private LocalDate intakeDate;
 	private String bio;
-	private BufferedImage photo;
+	private ImageIcon photo;
 	private boolean liked;
 
 	public Pet(String name, int age, LocalDate intakeDate, String bio,
-			BufferedImage photo)
+			ImageIcon photo)
 	{
 		this.name = name;
 		this.age = age;
@@ -75,7 +76,7 @@ public abstract class Pet
 	/**
 	 * @return the profile photo of the Pet
 	 */
-	public BufferedImage getPhoto()
+	public ImageIcon getPhoto()
 	{
 		return photo;
 	}
@@ -119,7 +120,7 @@ public abstract class Pet
 	 * 
 	 * @param photo the new profile picture
 	 */
-	public void setPhoto(BufferedImage photo)
+	public void setPhoto(ImageIcon photo)
 	{
 		this.photo = photo;
 	}

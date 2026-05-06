@@ -16,7 +16,9 @@ package com.chandez.adoptme.ui;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
@@ -51,6 +53,7 @@ public class SwipeView extends JPanel
 		// Create the photo //
 		photo = new JLabel();
 		setPhoto(pet);
+		photo.setBackground(Color.BLUE);
 
 		// Create basic info section //
 		basicInfo = new JPanel();
@@ -89,9 +92,9 @@ public class SwipeView extends JPanel
 		add(buttonPanel, BorderLayout.SOUTH);
 
 		// Add pfp to the center
-		add(photo);
+		add(photo, BorderLayout.CENTER);
 		// Add name and basic info under the photo
-		add(basicInfo);
+		add(basicInfo, BorderLayout.NORTH);
 		// Add extended bio to the right of the photo
 		add(extInfo, BorderLayout.EAST);
 	}
@@ -113,17 +116,35 @@ public class SwipeView extends JPanel
 	 */
 	private void setPhoto(Pet pet)
 	{
-		// Wraps the BufferedImage from the Pet object into an ImageIcon,
-		// which is then wrapped into a JLabel
+		// // Wraps the BufferedImage from the Pet object into an ImageIcon,
+		// // which is then wrapped into a JLabel
+		// try
+		// {
+		// photo.setIcon(pet.getPhoto());
+		// }
+		// catch (NullPointerException e)
+		// {
+		// // TODO
+		// // Not necessarily null, but catch potential error from Pet not
+		// // having a valid photo
+		// e.printStackTrace();
+		// }
 		try
 		{
-			photo.setIcon(new ImageIcon(pet.getPhoto()));
+			ImageIcon icon = pet.getPhoto();
+			if (icon != null)
+			{
+				// Scale the image to a reasonable size
+				Image scaledImage = icon.getImage().getScaledInstance(300, 300,
+						Image.SCALE_SMOOTH);
+				ImageIcon scaledIcon = new ImageIcon(scaledImage);
+				photo.setIcon(scaledIcon);
+				photo.setPreferredSize(new Dimension(300, 300));
+			}
 		}
 		catch (NullPointerException e)
 		{
-			// TODO
-			// Not necessarily null, but catch potential error from Pet not
-			// having a valid photo
+			e.printStackTrace();
 		}
 	}
 
