@@ -41,7 +41,7 @@ public class SwipePageListener implements ActionListener
 		this.yesButton = view.getYesButton();
 		this.noButton = view.getNoButton();
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
