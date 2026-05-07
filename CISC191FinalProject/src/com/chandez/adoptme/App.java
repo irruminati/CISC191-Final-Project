@@ -12,6 +12,7 @@
 package com.chandez.adoptme;
 
 import com.chandez.adoptme.domain.*;
+import com.chandez.adoptme.other.CSVPetReader;
 import com.chandez.adoptme.ui.*;
 
 import java.awt.image.BufferedImage;
@@ -65,6 +66,9 @@ public class App
 		petRepo.addPet(testPet);
 		petRepo.addPet(testPet2);
 		petRepo.addPet(testPet3);
+
+		CSVPetReader reader = new CSVPetReader();
+		petRepo.addAllPets(reader.readFile("./Pets.txt"));
 
 		SwipeView swipeView = new SwipeView(petRepo);
 	}
