@@ -45,10 +45,10 @@ public class Cat extends Pet
 	 * @param bio
 	 * @param photo
 	 */
-	public Cat(String name, int age, LocalDate intakeDate, String bio,
+	public Cat(String name, int age, String sex, LocalDate intakeDate, String bio,
 			ImageIcon photo)
 	{
-		super(name, age, intakeDate, bio, photo);
+		super(name, age, sex, intakeDate, bio, photo);
 	}
 
 	public boolean isVaccinated()

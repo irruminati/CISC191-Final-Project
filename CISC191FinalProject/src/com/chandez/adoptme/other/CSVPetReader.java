@@ -62,7 +62,7 @@ public class CSVPetReader
 	 * @param bio        a short bit of text describing the Pet
 	 * @return
 	 */
-	private Pet createPet(String type, String name, int age,
+	private Pet createPet(String type, String name, int age, String sex,
 			LocalDate intakeDate, String bio, ImageIcon pic)
 	{
 		if (pic == null)
@@ -72,11 +72,11 @@ public class CSVPetReader
 		switch (type)
 		{
 			case "Dog":
-				return new Dog(name, age, intakeDate, bio, pic);
+				return new Dog(name, age, sex, intakeDate, bio, pic);
 			case "Cat":
-				return new Cat(name, age, intakeDate, bio, pic);
+				return new Cat(name, age, sex, intakeDate, bio, pic);
 			case "Bird":
-				return new Bird(name, age, intakeDate, bio, pic);
+				return new Bird(name, age, sex, intakeDate, bio, pic);
 			default:
 				return null;
 		}
@@ -97,6 +97,15 @@ public class CSVPetReader
 		String type = fields[0].trim();
 		String name = fields[1].trim();
 		int age = Integer.parseInt(fields[2].trim());
+		String sex = fields[3].trim();
+		if (sex.equalsIgnoreCase("F"))
+		{
+			sex = "Female";
+		}
+		else
+		{
+			sex = "Male";
+		}
 		LocalDate intakeDate = LocalDate.parse(fields[3].trim());
 		String bio = fields[4].trim();
 		String picName = fields[5].trim();
@@ -110,6 +119,6 @@ public class CSVPetReader
 			System.out.println("Couldn't find image " + picName);
 		}
 
-		return createPet(type, name, age, intakeDate, bio, pic);
+		return createPet(type, name, age, sex, intakeDate, bio, pic);
 	}
 }

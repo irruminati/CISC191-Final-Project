@@ -18,16 +18,18 @@ public abstract class Pet
 	private String type;
 	private String name;
 	private int age;
+	private String sex;
 	private LocalDate intakeDate;
 	private String bio;
 	private ImageIcon photo;
 	private boolean liked;
 
-	public Pet(String name, int age, LocalDate intakeDate, String bio,
-			ImageIcon photo)
+	public Pet(String name, int age, String sex, LocalDate intakeDate,
+			String bio, ImageIcon photo)
 	{
 		this.name = name;
 		this.age = age;
+		this.sex = sex;
 		this.intakeDate = intakeDate;
 		this.bio = bio;
 		this.photo = photo;
@@ -55,6 +57,14 @@ public abstract class Pet
 	public int getAge()
 	{
 		return age;
+	}
+	
+	/**
+	 * @return the sex of the Pet
+	 */
+	public String getSex()
+	{
+		return sex;
 	}
 
 	/**

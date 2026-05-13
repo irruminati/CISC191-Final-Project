@@ -44,10 +44,10 @@ public class Dog extends Pet
 	 * @param bio
 	 * @param photo
 	 */
-	public Dog(String name, int age, LocalDate intakeDate, String bio,
-			ImageIcon photo)
+	public Dog(String name, int age, String sex, LocalDate intakeDate,
+			String bio, ImageIcon photo)
 	{
-		super(name, age, intakeDate, bio, photo);
+		super(name, age, sex, intakeDate, bio, photo);
 	}
 
 	public boolean isVaccinated()
