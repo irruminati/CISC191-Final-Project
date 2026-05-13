@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+
 import com.chandez.adoptme.domain.*;
 
 /**
@@ -18,7 +20,7 @@ import com.chandez.adoptme.domain.*;
  */
 
 /**
- * Purpose: The reponsibility of CSVPetReader is ...
+ * Purpose: The responsibility of CSVPetReader is ...
  *
  * CSVPetReader is-a ...
  * CSVPetReader is ...
@@ -61,16 +63,20 @@ public class CSVPetReader
 	 * @return
 	 */
 	private Pet createPet(String type, String name, int age,
-			LocalDate intakeDate, String bio)
+			LocalDate intakeDate, String bio, ImageIcon pic)
 	{
+		if (pic == null)
+		{
+			System.out.println("Couldn't find image for " + name);
+		}
 		switch (type)
 		{
 			case "Dog":
-				return new Dog(name, age, intakeDate, bio, null);
+				return new Dog(name, age, intakeDate, bio, pic);
 			case "Cat":
-				return new Cat(name, age, intakeDate, bio, null);
+				return new Cat(name, age, intakeDate, bio, pic);
 			case "Bird":
-				return new Bird(name, age, intakeDate, bio, null);
+				return new Bird(name, age, intakeDate, bio, pic);
 			default:
 				return null;
 		}
@@ -93,7 +99,17 @@ public class CSVPetReader
 		int age = Integer.parseInt(fields[2].trim());
 		LocalDate intakeDate = LocalDate.parse(fields[3].trim());
 		String bio = fields[4].trim();
+		String picName = fields[5].trim();
 
-		return createPet(type, name, age, intakeDate, bio);
+		// Create an image from the parsed file name
+		ImageIcon pic = new ImageIcon("./images/" + picName);
+
+		// Print message if the picture wasn't properly created
+		if (pic == null)
+		{
+			System.out.println("Couldn't find image " + picName);
+		}
+
+		return createPet(type, name, age, intakeDate, bio, pic);
 	}
 }

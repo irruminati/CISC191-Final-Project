@@ -16,6 +16,8 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import com.chandez.adoptme.controllers.*;
@@ -28,12 +30,9 @@ public class SwipeView extends JFrame
 {
 	private JLabel photo; // Profile photo of the Pet
 
-	private JPanel basicInfo; // Name, age, and breed
 	private JLabel nameAndAge;
 	private JLabel breed;
 
-	private JPanel extInfo; // Extended info; ex) biography, intake date, vax
-							// status, etc.
 	private JLabel bioHeader;
 	private JTextArea bioParagraph;
 
@@ -43,6 +42,8 @@ public class SwipeView extends JFrame
 	public SwipeView(PetRepository petRepo)
 	{
 		super();
+		// TODO Maybe should change this to adhere to MVC ??
+		Pet pet = petRepo.getCurrPet();
 
 		setLayout(new BorderLayout());
 
@@ -52,11 +53,6 @@ public class SwipeView extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// App name at the top
 		setTitle("Adopt Me");
-		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
-		// BorderLayout.NORTH);
-
-		// TODO Maybe should change this to adhere to MVC ??
-		Pet pet = petRepo.getCurrPet();
 
 		// PROFILE PICTURE //
 
@@ -65,7 +61,7 @@ public class SwipeView extends JFrame
 
 		// BASIC INFO //
 
-		basicInfo = new JPanel();
+		JPanel basicInfo = new JPanel();
 
 		nameAndAge = new JLabel();
 		basicInfo.add(nameAndAge);
@@ -75,9 +71,22 @@ public class SwipeView extends JFrame
 
 		setBasicInfo(pet);
 
+		// MAIN PANEL //
+
+		JPanel mainInfoPanel = new JPanel();
+		mainInfoPanel.setLayout(new BoxLayout(mainInfoPanel, BoxLayout.Y_AXIS));
+
+		mainInfoPanel.add(photo, BorderLayout.CENTER);
+		mainInfoPanel.add(basicInfo, BorderLayout.PAGE_END);
+
 		// BIOGRAPHY //
 
-		extInfo = new JPanel();
+		JPanel extInfo = new JPanel();
+
+		// GridBagConstraints gbc = new GridBagConstraints();
+		// gbc.gridx = 0;
+		// gbc.gridy = 0;
+		// gbc.anchor = GridBagConstraints.CENTER;
 
 		bioHeader = new JLabel();
 		extInfo.add(bioHeader);
@@ -108,19 +117,11 @@ public class SwipeView extends JFrame
 		buttonPanel.add(yesButton);
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
+		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
+		// BorderLayout.NORTH);
 		add(buttonPanel, BorderLayout.SOUTH);
-
-		JPanel tempPanel = new JPanel();
-		tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.Y_AXIS));
-
-		// Add pfp to the center
-		tempPanel.add(photo, BorderLayout.CENTER);
-		// Add name and basic info under the photo
-		tempPanel.add(basicInfo, BorderLayout.PAGE_END);
-		// Add extended bio to the right of the photo
+		add(mainInfoPanel, BorderLayout.CENTER);
 		add(extInfo, BorderLayout.EAST);
-
-		add(tempPanel, BorderLayout.CENTER);
 
 		// Make the window visible
 		setVisible(true);
