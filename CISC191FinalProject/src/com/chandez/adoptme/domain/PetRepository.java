@@ -59,11 +59,32 @@ public class PetRepository
 	 * Move to the next Pet, and move the current Pet to the end of the list.
 	 * Also returns the new Pet at the top of the list.
 	 * 
+	 * @param liked true if the current Pet was liked by the user, false
+	 *              otherwise
 	 * @return the current Pet in the list
 	 */
-	public Pet nextPet()
+	public Pet nextPet(boolean liked)
 	{
-		petList.add(petList.remove());
+		// Remove the current Pet from the top of the list
+		Pet currPet = petList.remove();
+
+		// If the user "liked" the Pet, add it back to the end of the list
+		if (liked)
+		{
+			petList.add(currPet);
+		}
+
+		// Return the next Pet in the list
 		return petList.peek();
+	}
+
+	/**
+	 * Check if there is only one Pet left in the list
+	 * 
+	 * @return true if list has exactly one Pet, false otherwise
+	 */
+	public boolean onePetLeft()
+	{
+		return petList.size() == 1;
 	}
 }

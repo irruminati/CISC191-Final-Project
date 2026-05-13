@@ -5,18 +5,18 @@ package com.chandez.adoptme.ui;
  * 
  * @author Rumi Chadwick
  * @author Ale Hernandez
- *
- *         References:
- *         Morelli, R., & Walde, R. (2016).
- *         Java, Java, Java: Object-Oriented Problem Solving
- *         https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *         Other Contributors:
+ *         Alex Chow
  *
  *         Version: 2026-04-29
  */
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
@@ -24,7 +24,7 @@ import com.chandez.adoptme.domain.*;
 /**
  * Purpose:
  */
-public class SwipeView extends JPanel
+public class SwipeView extends JFrame
 {
 	private JLabel photo; // Profile photo of the Pet
 
@@ -42,17 +42,29 @@ public class SwipeView extends JPanel
 
 	public SwipeView(PetRepository petRepo)
 	{
-		super(new BorderLayout());
-		setMinimumSize(new Dimension(800, 800));
+		super();
+
+		setLayout(new BorderLayout());
+
+		// Minimum size of window
+		setMinimumSize(new Dimension(600, 400));
+		// Close app when window is closed
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// App name at the top
+		setTitle("Adopt Me");
+		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
+		// BorderLayout.NORTH);
 
 		// TODO Maybe should change this to adhere to MVC ??
 		Pet pet = petRepo.getCurrPet();
 
-		// Create the photo //
+		// PROFILE PICTURE //
+
 		photo = new JLabel();
 		setPhoto(pet);
 
-		// Create basic info section //
+		// BASIC INFO //
+
 		basicInfo = new JPanel();
 
 		nameAndAge = new JLabel();
@@ -63,47 +75,55 @@ public class SwipeView extends JPanel
 
 		setBasicInfo(pet);
 
-		// Create extended info section
+		// BIOGRAPHY //
+
 		extInfo = new JPanel();
 
 		bioHeader = new JLabel();
 		extInfo.add(bioHeader);
 
 		bioParagraph = new JTextArea();
-		bioParagraph.setEditable(false);
+		bioParagraph.setFocusable(false);
 		extInfo.add(bioParagraph);
 
 		setExtInfo(pet);
 
-		// Create the buttons //
+		// BUTTONS //
+
+		// Create a container panel for the buttons with a box layout
 		JPanel buttonPanel = new JPanel();
+		// Align them horizontally
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
-		yesButton = new JButton("Yes");
-		buttonPanel.add(yesButton);
-		yesButton.addActionListener(new SwipePageListener(petRepo, this));
-
+		// Create the "no" button
 		noButton = new JButton("No");
 		buttonPanel.add(noButton);
-		noButton.addActionListener(new SwipePageListener(petRepo, this));
+		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
+
+		// Spacer to push both buttons to the bottom corners
+		buttonPanel.add(Box.createHorizontalGlue());
+
+		// Create the "yes" button
+		yesButton = new JButton("Yes");
+		buttonPanel.add(yesButton);
+		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
 		add(buttonPanel, BorderLayout.SOUTH);
 
+		JPanel tempPanel = new JPanel();
+		tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.Y_AXIS));
+
 		// Add pfp to the center
-		add(photo);
+		tempPanel.add(photo, BorderLayout.CENTER);
 		// Add name and basic info under the photo
-		add(basicInfo);
+		tempPanel.add(basicInfo, BorderLayout.PAGE_END);
 		// Add extended bio to the right of the photo
 		add(extInfo, BorderLayout.EAST);
-	}
 
-	public JButton getYesButton()
-	{
-		return yesButton;
-	}
+		add(tempPanel, BorderLayout.CENTER);
 
-	public JButton getNoButton()
-	{
-		return noButton;
+		// Make the window visible
+		setVisible(true);
 	}
 
 	/**
@@ -113,17 +133,24 @@ public class SwipeView extends JPanel
 	 */
 	private void setPhoto(Pet pet)
 	{
-		// Wraps the BufferedImage from the Pet object into an ImageIcon,
-		// which is then wrapped into a JLabel
 		try
 		{
-			photo.setIcon(new ImageIcon(pet.getPhoto()));
+			ImageIcon icon = pet.getPhoto();
+			if (icon != null)
+			{
+				// Scale the image to a reasonable size
+				Image scaledImage = icon.getImage().getScaledInstance(300, 300,
+						Image.SCALE_SMOOTH);
+				ImageIcon scaledIcon = new ImageIcon(scaledImage);
+				photo.setIcon(scaledIcon);
+				photo.setPreferredSize(new Dimension(300, 300));
+			}
 		}
 		catch (NullPointerException e)
 		{
-			// TODO
-			// Not necessarily null, but catch potential error from Pet not
-			// having a valid photo
+			e.printStackTrace();
+			System.out
+					.println("Failed to set photo for " + nameAndAge.getText());
 		}
 	}
 
@@ -145,7 +172,7 @@ public class SwipeView extends JPanel
 	 */
 	private void setExtInfo(Pet pet)
 	{
-		// TODO
+		bioParagraph.setText(pet.getBio());
 	}
 
 	public void updatePetView(Pet pet)

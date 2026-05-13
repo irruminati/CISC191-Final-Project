@@ -1,21 +1,13 @@
 /**
-* Lead Author(s):
-* @author alehzp; student ID
-* @author Full name; student ID
-* <<Add additional lead authors here>>
-*
-* Other Contributors:
-* Full name; student ID or contact information if not in class
-* <<Add additional contributors (mentors, tutors, friends) here, with contact information>>
-*
-* References:
-* Morelli, R., & Walde, R. (2016).
-* Java, Java, Java: Object-Oriented Problem Solving
-* https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
-*
-* <<Add more references here>>
-* Version: 2026-05-05
-*/
+ * Lead Author(s):
+ * 
+ * @author Ale Hernandez
+ *
+ *         Other Contributors:
+ *         Alex Chow
+ * 
+ *         Version: 2026-05-05
+ */
 package com.chandez.adoptme.ui;
 
 import java.awt.Color;
@@ -44,59 +36,75 @@ public class AdoptionWindow extends JFrame
 	private JPanel namePanel;
 	private JPanel phonePanel;
 	private JPanel addressPanel;
+<<<<<<< HEAD
 	private JPanel submitPanel;
 	
+=======
+
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 	private JLabel titleLabel;
 	private JLabel userNameLabel;
 	private JLabel userPhoneLabel;
+<<<<<<< HEAD
 	private JLabel userAddressLabel; 
 	private JLabel errorLabel; 
 	
+=======
+	private JLabel userAddressLabel;
+
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 	private JTextField inputName;
 	private JTextField inputPhone;
 	private JTextField inputAddress;
+<<<<<<< HEAD
 	
 	private JButton submitButton;
 	
+=======
+
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 	private static final short BORDER_PADDING = 30;
 	private static final short TITLE_FONT_SIZE = 24;
 	private static final short FIELD_CHAR_WIDTH = 15;
-	
-	public AdoptionWindow() 
+
+	public AdoptionWindow()
 	{
 		super();
-		
+
 		setTitle("Adopt me");
-		setMinimumSize(new Dimension(400, 400));
+		setMinimumSize(new Dimension(400, 350));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		userInfo = new JPanel();
 		BoxLayout boxLayout = new BoxLayout(userInfo, BoxLayout.Y_AXIS);
 		userInfo.setLayout(boxLayout);
-		userInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder(
-				BORDER_PADDING, BORDER_PADDING, BORDER_PADDING, BORDER_PADDING));
-		
+		userInfo.setBorder(
+				javax.swing.BorderFactory.createEmptyBorder(BORDER_PADDING,
+						BORDER_PADDING, BORDER_PADDING, BORDER_PADDING));
+
 		titleLabel = new JLabel("User Information");
 		titleLabel.setAlignmentX(CENTER_ALIGNMENT);
-		titleLabel.setFont(new Font(Font.SANS_SERIF, Font.BOLD, TITLE_FONT_SIZE));
-		
+		titleLabel
+				.setFont(new Font(Font.SANS_SERIF, Font.BOLD, TITLE_FONT_SIZE));
+
 		namePanel = new JPanel();
 		userNameLabel = new JLabel("Name");
 		inputName = new JTextField(FIELD_CHAR_WIDTH);
 		namePanel.add(userNameLabel);
 		namePanel.add(inputName);
-		
+
 		phonePanel = new JPanel();
 		userPhoneLabel = new JLabel("Phone Number");
 		inputPhone = new JTextField(FIELD_CHAR_WIDTH);
 		phonePanel.add(userPhoneLabel);
 		phonePanel.add(inputPhone);
-		
+
 		addressPanel = new JPanel();
 		userAddressLabel = new JLabel("Your Address");
 		inputAddress = new JTextField(FIELD_CHAR_WIDTH);
 		addressPanel.add(userAddressLabel);
 		addressPanel.add(inputAddress);
+<<<<<<< HEAD
 		
 		errorLabel = new JLabel(" ");
 		errorLabel.setForeground(Color.RED);
@@ -107,15 +115,22 @@ public class AdoptionWindow extends JFrame
 		submitButton = new JButton("Submit");
 		submitPanel.add(submitButton);
 		
+=======
+
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		userInfo.add(titleLabel);
 		userInfo.add(namePanel);
 		userInfo.add(phonePanel);
 		userInfo.add(addressPanel);
+<<<<<<< HEAD
 		userInfo.add(submitPanel);
 		userInfo.add(errorLabel);
 		
+=======
+
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		add(userInfo);
-		
+
 		setVisible(true);
 	}
 	
