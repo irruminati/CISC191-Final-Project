@@ -15,25 +15,25 @@
 *
 * <<Add more references here>>
 *
-* Version: 2026-05-05
+* Version: 2026-05-09
 */
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of PhoneNumberException is ...
+ * Purpose: The reponsibility of NameException is ...
  *
- * PhoneNumberException is-a ...
- * PhoneNumberException is ...
+ * NameException is-a ...
+ * NameException is ...
  */
-public class PhoneNumberException extends Exception
-{	
-	public PhoneNumberException()
+public class NameException extends Exception
+{
+	public NameException()
+ {
+	 super("Please enter a valid name");
+ }
+	public NameException(String message)
 	{
-		super("Please enter a valid phone number");
-	}
-	
-	public PhoneNumberException(String message)
-	{
-		super(message); 
+		super(message);
 	}
 }
+
