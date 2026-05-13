@@ -58,7 +58,7 @@ public abstract class Pet
 	{
 		return age;
 	}
-	
+
 	/**
 	 * @return the sex of the Pet
 	 */

@@ -35,11 +35,10 @@ public class Dog extends Pet
 	private boolean vaccinated;
 
 	/**
-	 * Purpose:
-	 * 
 	 * @param species
 	 * @param name
 	 * @param age
+	 * @param sex
 	 * @param intakeDate
 	 * @param bio
 	 * @param photo

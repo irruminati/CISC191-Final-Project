@@ -77,7 +77,7 @@ public class SwipeView extends JFrame
 		mainInfoPanel.setLayout(new BoxLayout(mainInfoPanel, BoxLayout.Y_AXIS));
 
 		mainInfoPanel.add(photo, BorderLayout.CENTER);
-		mainInfoPanel.add(basicInfo, BorderLayout.PAGE_END);
+		mainInfoPanel.add(basicInfo, BorderLayout.CENTER);
 
 		// BIOGRAPHY //
 
