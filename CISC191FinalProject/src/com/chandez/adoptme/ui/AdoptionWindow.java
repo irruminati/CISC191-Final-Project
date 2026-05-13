@@ -10,17 +10,22 @@
  */
 package com.chandez.adoptme.ui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+import com.chandez.adoptme.controllers.AdoptionWindowController;
 
 /**
- * Purpose: The reponsibility of AdoptionWindow is ...
+ * Purpose: The responsibility of AdoptionWindow is ...
  *
  * AdoptionWindow is-a ...
  * AdoptionWindow is ...
@@ -31,15 +36,19 @@ public class AdoptionWindow extends JFrame
 	private JPanel namePanel;
 	private JPanel phonePanel;
 	private JPanel addressPanel;
+	private JPanel submitPanel;
 
 	private JLabel titleLabel;
 	private JLabel userNameLabel;
 	private JLabel userPhoneLabel;
 	private JLabel userAddressLabel;
+	private JLabel errorLabel;
 
 	private JTextField inputName;
 	private JTextField inputPhone;
 	private JTextField inputAddress;
+
+	private JButton submitButton;
 
 	private static final short BORDER_PADDING = 30;
 	private static final short TITLE_FONT_SIZE = 24;
@@ -83,13 +92,67 @@ public class AdoptionWindow extends JFrame
 		addressPanel.add(userAddressLabel);
 		addressPanel.add(inputAddress);
 
+		errorLabel = new JLabel(" ");
+		errorLabel.setForeground(Color.RED);
+		errorLabel.setAlignmentX(CENTER_ALIGNMENT);
+
+		submitPanel = new JPanel();
+		submitButton = new JButton("Submit");
+		submitPanel.add(submitButton);
+
 		userInfo.add(titleLabel);
 		userInfo.add(namePanel);
 		userInfo.add(phonePanel);
 		userInfo.add(addressPanel);
+		userInfo.add(submitPanel);
+		userInfo.add(errorLabel);
 
 		add(userInfo);
 
 		setVisible(true);
+	}
+
+	public String getInputAddress()
+	{
+		return inputAddress.getText();
+	}
+
+	public String getInputPhone()
+	{
+		return inputPhone.getText();
+	}
+
+	public String getInputName()
+	{
+		return inputName.getText();
+	}
+
+	public JButton getSubmitButton()
+	{
+		return submitButton;
+	}
+
+	public void showError(String message)
+	{
+		errorLabel.setText(message);
+	}
+
+	public void clearError()
+	{
+		errorLabel.setText(" ");
+	}
+
+	public void closeWindow()
+	{
+		dispose();
+	}
+
+	public static void main(String[] args)
+	{
+		SwingUtilities.invokeLater(() -> {
+			AdoptionWindow window = new AdoptionWindow();
+			new AdoptionWindowController(window);
+			window.setVisible(true);
+		});
 	}
 }
