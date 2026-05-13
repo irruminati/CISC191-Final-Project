@@ -147,12 +147,12 @@ public class AdoptionWindow extends JFrame
 		dispose();
 	}
 
-	public static void main(String[] args)
-	{
-		SwingUtilities.invokeLater(() -> {
-			AdoptionWindow window = new AdoptionWindow();
-			new AdoptionWindowController(window);
-			window.setVisible(true);
-		});
-	}
+//	public static void main(String[] args)
+//	{
+//		SwingUtilities.invokeLater(() -> {
+//			AdoptionWindow window = new AdoptionWindow();
+//			new AdoptionWindowController(window);
+//			window.setVisible(true);
+//		});
+//	}
 }
