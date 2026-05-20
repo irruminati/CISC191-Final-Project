@@ -44,19 +44,19 @@ public class Dog extends Pet
 	 * @param photo
 	 */
 	public Dog(String name, int age, String sex, LocalDate intakeDate,
-			String bio, ImageIcon photo)
+			String bio, boolean vaccinated, ImageIcon photo)
 	{
 		super(name, age, sex, intakeDate, bio, photo);
+		this.vaccinated = vaccinated;
+	}
+	
+	public String getType()
+	{
+		return "Dog";
 	}
 
 	public boolean isVaccinated()
 	{
 		return vaccinated;
 	}
-
-	public void isVaccinated(boolean vaccinated)
-	{
-		this.vaccinated = vaccinated;
-	}
-
 }

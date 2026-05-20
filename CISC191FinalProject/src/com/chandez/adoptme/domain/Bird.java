@@ -33,6 +33,8 @@ import javax.swing.ImageIcon;
  */
 public class Bird extends Pet
 {
+	private boolean clipped;
+
 	/**
 	 * Purpose:
 	 * 
@@ -44,8 +46,14 @@ public class Bird extends Pet
 	 * @param photo
 	 */
 	public Bird(String name, int age, String sex, LocalDate intakeDate,
-			String bio, ImageIcon photo)
+			String bio, boolean clipped, ImageIcon photo)
 	{
 		super(name, age, sex, intakeDate, bio, photo);
+		this.clipped = clipped;
+	}
+
+	public String getType()
+	{
+		return "Bird";
 	}
 }

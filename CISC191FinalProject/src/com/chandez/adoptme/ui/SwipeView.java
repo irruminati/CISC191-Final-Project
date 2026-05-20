@@ -42,15 +42,18 @@ public class SwipeView extends JFrame
 	public SwipeView(PetRepository petRepo)
 	{
 		super();
-		// TODO Maybe should change this to adhere to MVC ??
+
 		Pet pet = petRepo.getCurrPet();
 
 		setLayout(new BorderLayout());
 
 		// Minimum size of window
 		setMinimumSize(new Dimension(600, 400));
+		// Lock the size of the window
+		setResizable(false);
 		// Close app when window is closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setBackground(Color.BLUE);
 		// App name at the top
 		setTitle("Adopt Me");
 
@@ -74,10 +77,12 @@ public class SwipeView extends JFrame
 		// MAIN PANEL //
 
 		JPanel mainInfoPanel = new JPanel(new BorderLayout());
-		// mainInfoPanel.setLayout(new BorderLayout());
 
 		mainInfoPanel.add(photo, BorderLayout.CENTER);
 		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
+
+		// mainInfoPanel.add(photo, BorderLayout.CENTER);
+		// mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
@@ -88,7 +93,11 @@ public class SwipeView extends JFrame
 
 		bioHeader = new JLabel();
 		bioParagraph = new JTextArea();
-		bioParagraph.setFocusable(false);
+
+		// TODO add constants ?
+		bioParagraph.setBounds(bioParagraph.getX(), bioParagraph.getY(), 300,
+				bioParagraph.getHeight());
+		bioParagraph.setFocusable(false); // Make bio uneditable
 		bioParagraph.setLineWrap(true);
 		bioParagraph.setWrapStyleWord(true);
 
@@ -129,8 +138,14 @@ public class SwipeView extends JFrame
 		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
 		// BorderLayout.NORTH);
 		add(buttonPanel, BorderLayout.SOUTH);
-		add(mainInfoPanel, BorderLayout.CENTER);
-		add(extInfo, BorderLayout.EAST);
+		// add(mainInfoPanel, BorderLayout.CENTER);
+		// add(extInfo, BorderLayout.CENTER);
+
+		JPanel allInfoPanel = new JPanel();
+		allInfoPanel.add(mainInfoPanel);
+		allInfoPanel.add(extInfo);
+
+		add(allInfoPanel, BorderLayout.CENTER);
 
 		// Make the window visible
 		setVisible(true);
@@ -183,7 +198,9 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio());
+		bioParagraph.setText(pet.getBio() + "/n");
+		
+		//TODO add bulleted info, prob write a method for this in relative pet subclasses
 	}
 
 	public void updatePetView(Pet pet)

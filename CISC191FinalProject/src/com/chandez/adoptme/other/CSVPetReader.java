@@ -63,7 +63,7 @@ public class CSVPetReader
 	 * @return
 	 */
 	private Pet createPet(String type, String name, int age, String sex,
-			LocalDate intakeDate, String bio, ImageIcon pic)
+			LocalDate intakeDate, String bio, boolean clippedOrVaxed, ImageIcon pic)
 	{
 		if (pic == null)
 		{
@@ -72,11 +72,11 @@ public class CSVPetReader
 		switch (type)
 		{
 			case "Dog":
-				return new Dog(name, age, sex, intakeDate, bio, pic);
+				return new Dog(name, age, sex, intakeDate, bio, clippedOrVaxed, pic);
 			case "Cat":
-				return new Cat(name, age, sex, intakeDate, bio, pic);
+				return new Cat(name, age, sex, intakeDate, bio, clippedOrVaxed, pic);
 			case "Bird":
-				return new Bird(name, age, sex, intakeDate, bio, pic);
+				return new Bird(name, age, sex, intakeDate, bio, clippedOrVaxed, pic);
 			default:
 				return null;
 		}
@@ -98,17 +98,18 @@ public class CSVPetReader
 		String name = fields[1].trim();
 		int age = Integer.parseInt(fields[2].trim());
 		String sex = fields[3].trim();
-		if (sex.equalsIgnoreCase("F"))
+		LocalDate intakeDate = LocalDate.parse(fields[4].trim());
+		String bio = fields[5].trim();
+		boolean clippedOrVaxed;
+		if(fields[7].trim().equalsIgnoreCase("yes"))
 		{
-			sex = "Female";
+			clippedOrVaxed = true;
 		}
 		else
 		{
-			sex = "Male";
+			clippedOrVaxed = false;
 		}
-		LocalDate intakeDate = LocalDate.parse(fields[3].trim());
-		String bio = fields[4].trim();
-		String picName = fields[5].trim();
+		String picName = fields[7].trim();
 
 		// Create an image from the parsed file name
 		ImageIcon pic = new ImageIcon("./images/" + picName);
@@ -119,6 +120,6 @@ public class CSVPetReader
 			System.out.println("Couldn't find image " + picName);
 		}
 
-		return createPet(type, name, age, sex, intakeDate, bio, pic);
+		return createPet(type, name, age, sex, intakeDate, bio, clippedOrVaxed, pic);
 	}
 }

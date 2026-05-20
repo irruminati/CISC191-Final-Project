@@ -43,33 +43,33 @@ public class App
 		ImageIcon felixPic = new ImageIcon("./images/kuri.JPG");
 
 		Pet testPet = new Dog("Felix", 3, "M", testDate,
-				"This is the bio paragraph for this Pet \nWe don't have a real one yet :(",
+				"This is the bio paragraph for this Pet \nWe don't have a real one yet :(", true,
 				felixPic);
 		testPet.setType("Dog");
 
 		// TEST PET 2
 		LocalDate testDate2 = LocalDate.of(2006, Month.DECEMBER, 4);
 		ImageIcon daisyPic = new ImageIcon("./images/daisy.jpeg");
-		Pet testPet2 = new Cat("Daisy", 15, "F", testDate2, "", daisyPic);
+		Pet testPet2 = new Cat("Daisy", 15, "F", testDate2, "", false, daisyPic);
 		testPet2.setType("Cat");
 
 		// TEST PET 3
 		LocalDate testDate3 = LocalDate.of(2006, Month.AUGUST, 22);
 		ImageIcon olePic = new ImageIcon("./images/six_seven.JPG");
-		Pet testPet3 = new Bird("Ole", 15, "M", testDate3, "", olePic);
+		Pet testPet3 = new Bird("Ole", 15, "M", testDate3, "", true, olePic);
 		testPet3.setType("Bird");
 
-		// Create test repository
+		// Create repository
 		LinkedList<Pet> petList = new LinkedList<Pet>();
 		PetRepository petRepo = new PetRepository(petList);
 
 		// Add testPets to the test repository
-		petRepo.addPet(testPet);
-		petRepo.addPet(testPet2);
-		petRepo.addPet(testPet3);
+		// petRepo.addPet(testPet);
+		// petRepo.addPet(testPet2);
+		// petRepo.addPet(testPet3);
 
-		// CSVPetReader reader = new CSVPetReader();
-		// petRepo.addAllPets(reader.readFile("./Pets.txt"));
+		CSVPetReader reader = new CSVPetReader();
+		petRepo.addAllPets(reader.readFile("./Pets.txt"));
 
 		SwipeView swipeView = new SwipeView(petRepo);
 

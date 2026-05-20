@@ -45,19 +45,20 @@ public class Cat extends Pet
 	 * @param bio
 	 * @param photo
 	 */
-	public Cat(String name, int age, String sex, LocalDate intakeDate, String bio,
+	public Cat(String name, int age, String sex, LocalDate intakeDate, String bio, boolean vaccinated,
 			ImageIcon photo)
 	{
 		super(name, age, sex, intakeDate, bio, photo);
+		this.vaccinated = vaccinated;
+	}
+	
+	public String getType()
+	{
+		return "Cat";
 	}
 
 	public boolean isVaccinated()
 	{
 		return vaccinated;
-	}
-
-	public void isVaccinated(boolean vaccinated)
-	{
-		this.vaccinated = vaccinated;
 	}
 }
