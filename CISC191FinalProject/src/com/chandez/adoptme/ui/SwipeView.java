@@ -73,27 +73,36 @@ public class SwipeView extends JFrame
 
 		// MAIN PANEL //
 
-		JPanel mainInfoPanel = new JPanel();
-		mainInfoPanel.setLayout(new BoxLayout(mainInfoPanel, BoxLayout.Y_AXIS));
+		JPanel mainInfoPanel = new JPanel(new BorderLayout());
+		// mainInfoPanel.setLayout(new BorderLayout());
 
 		mainInfoPanel.add(photo, BorderLayout.CENTER);
-		mainInfoPanel.add(basicInfo, BorderLayout.PAGE_END);
+		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
 		JPanel extInfo = new JPanel();
-
-		// GridBagConstraints gbc = new GridBagConstraints();
-		// gbc.gridx = 0;
-		// gbc.gridy = 0;
-		// gbc.anchor = GridBagConstraints.CENTER;
+		extInfo.setLayout(new GridBagLayout());
+		extInfo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20)); // Left/right
+																			// margins
 
 		bioHeader = new JLabel();
-		extInfo.add(bioHeader);
-
 		bioParagraph = new JTextArea();
 		bioParagraph.setFocusable(false);
-		extInfo.add(bioParagraph);
+		bioParagraph.setLineWrap(true);
+		bioParagraph.setWrapStyleWord(true);
+
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.weightx = 1.0;
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		extInfo.add(bioHeader, gbc);
+
+		gbc.gridy = 1;
+		gbc.weighty = 1.0;
+		gbc.fill = GridBagConstraints.BOTH;
+		extInfo.add(bioParagraph, gbc);
 
 		setExtInfo(pet);
 
@@ -181,6 +190,7 @@ public class SwipeView extends JFrame
 	 */
 	private void setExtInfo(Pet pet)
 	{
+		bioHeader.setText("All about " + pet.getName() + "!");
 		bioParagraph.setText(pet.getBio());
 	}
 

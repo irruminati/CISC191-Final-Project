@@ -11,6 +11,7 @@
  */
 package com.chandez.adoptme;
 
+import com.chandez.adoptme.controllers.AdoptionWindowController;
 import com.chandez.adoptme.domain.*;
 import com.chandez.adoptme.other.CSVPetReader;
 import com.chandez.adoptme.ui.*;
@@ -67,9 +68,16 @@ public class App
 		petRepo.addPet(testPet2);
 		petRepo.addPet(testPet3);
 
-		CSVPetReader reader = new CSVPetReader();
-		petRepo.addAllPets(reader.readFile("./Pets.txt"));
+		// CSVPetReader reader = new CSVPetReader();
+		// petRepo.addAllPets(reader.readFile("./Pets.txt"));
 
 		SwipeView swipeView = new SwipeView(petRepo);
+
+	}
+
+	public void showAdoptionWindow(PetRepository petRepo)
+	{
+		AdoptionWindow window = new AdoptionWindow();
+		new AdoptionWindowController(window, petRepo);
 	}
 }

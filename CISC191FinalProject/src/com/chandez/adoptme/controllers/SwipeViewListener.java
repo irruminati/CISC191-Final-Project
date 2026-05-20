@@ -46,7 +46,11 @@ public class SwipeViewListener implements ActionListener
 		// If the no button is pressed, check if the next Pet is the last one
 		if (!yes && petList.onePetLeft())
 		{
-			new AdoptionWindow();
+			// app.showAdoptionWindow();
+
+			// TODO remove this and implement in App.java
+			// AdoptionWindow window = new AdoptionWindow();
+			// new AdoptionWindowController(window);
 		}
 	}
 }
