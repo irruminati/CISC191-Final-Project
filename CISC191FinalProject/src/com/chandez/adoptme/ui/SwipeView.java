@@ -198,7 +198,7 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio() + "/n");
+		bioParagraph.setText(pet.getBio() + "\n");
 		
 		//TODO add bulleted info, prob write a method for this in relative pet subclasses
 	}
