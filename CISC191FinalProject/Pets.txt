@@ -1,5 +1,5 @@
-Dog, Gibby, 2, 2024-12-06, Energetic and funny-looking, gibby.jpg
-Dog, Finn, 2, 2024-12-06, Calm and clingy, finn.jpg 
+Dog, Spike, 2, 2026-01-14, He is mean to men and likes girls, spike.jpg
+Dog, Katara, 2, 2024-12-06, Calm and clingy, katara.jpg 
 Cat, Kuri, 12, 2013-05-20, Lazy and personable, image3
 Dog, Toad, 6, 2019-09-13, Jumpy and loud and anxious, toad.jpg
 Cat, Daisy, 12, 2014-02-23, Quiet and sleepy, image5 

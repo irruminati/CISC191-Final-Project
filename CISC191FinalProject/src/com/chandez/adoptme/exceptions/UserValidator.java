@@ -64,7 +64,7 @@ public class UserValidator
 		
 		if (address.trim().length() < 5)
         {
-            throw new AddressException("Address is too short");
+            throw new AddressException("Invalid Address");
         }
 
         if (!address.matches(".*\\d.*"))

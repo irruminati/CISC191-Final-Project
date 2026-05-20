@@ -105,7 +105,11 @@ public class SwipeView extends JFrame
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		// Create the "no" button
-		noButton = new JButton("No");
+		noButton = new JButton("✖");
+		noButton.setBackground(Color.RED);
+		noButton.setOpaque(true);
+		noButton.setContentAreaFilled(true);
+		noButton.setBorderPainted(false);
 		buttonPanel.add(noButton);
 		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
 
@@ -113,7 +117,11 @@ public class SwipeView extends JFrame
 		buttonPanel.add(Box.createHorizontalGlue());
 
 		// Create the "yes" button
-		yesButton = new JButton("Yes");
+		yesButton = new JButton("✓");
+		yesButton.setBackground(new Color(34, 139, 34));		
+		yesButton.setOpaque(true);
+		yesButton.setContentAreaFilled(true);
+		yesButton.setBorderPainted(false);
 		buttonPanel.add(yesButton);
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
