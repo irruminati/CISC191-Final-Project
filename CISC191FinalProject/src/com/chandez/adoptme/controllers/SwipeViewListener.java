@@ -40,17 +40,30 @@ public class SwipeViewListener implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
+		// Play an animal sound if the user said yes to the Pet
+		if (yes)
+		{
+			petList.getCurrPet().playSound();
+		}
+		
 		// Move to the next Pet and update the UI with its info
 		view.updatePetView(petList.nextPet(yes));
 
 		// If the no button is pressed, check if the next Pet is the last one
 		if (!yes && petList.onePetLeft())
 		{
-			// app.showAdoptionWindow();
-
-			// TODO remove this and implement in App.java
-			// AdoptionWindow window = new AdoptionWindow();
-			// new AdoptionWindowController(window);
+			 showAdoptionWindow(petList);
 		}
+	}
+	
+	/**
+	 *  Helper method to create the popup adoption window
+	 *  
+	 * @param petRepo list
+	 */
+	private void showAdoptionWindow(PetRepository petRepo)
+	{
+		AdoptionWindow window = new AdoptionWindow();
+		new AdoptionWindowController(window, petRepo);
 	}
 }

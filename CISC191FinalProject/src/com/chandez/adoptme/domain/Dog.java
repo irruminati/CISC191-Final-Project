@@ -1,39 +1,27 @@
 /**
  * Lead Author(s):
  * 
- * @author alehzp; student ID
- * @author Full name; student ID
- *         <<Add additional lead authors here>>
+ * @author Rumi Chadwick
+ * @author Ale Hernandez
  *
- *         Other Contributors:
- *         Full name; student ID or contact information if not in class
- *         <<Add additional contributors (mentors, tutors, friends) here, with
- *         contact information>>
- *
- *         References:
- *         Morelli, R., & Walde, R. (2016).
- *         Java, Java, Java: Object-Oriented Problem Solving
- *         https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
- *
- *         <<Add more references here>>
- *
- *         Version: 2026-04-29
+ *         Version: 2026-05-27
  */
 package com.chandez.adoptme.domain;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 
 /**
- * Purpose: The reponsibility of Dog is ...
- *
- * Dog is-a ...
- * Dog is ...
+ * A Dog is a one of many kinds of Pet available for adoption
  */
 public class Dog extends Pet
 {
-	private boolean vaccinated;
-
 	/**
 	 * @param species
 	 * @param name
@@ -44,19 +32,54 @@ public class Dog extends Pet
 	 * @param photo
 	 */
 	public Dog(String name, int age, String sex, LocalDate intakeDate,
-			String bio, boolean vaccinated, ImageIcon photo)
+			String bio, ImageIcon photo)
 	{
 		super(name, age, sex, intakeDate, bio, photo);
-		this.vaccinated = vaccinated;
 	}
-	
+
 	public String getType()
 	{
 		return "Dog";
 	}
 
-	public boolean isVaccinated()
+	@Override
+	public void playSound()
 	{
-		return vaccinated;
+		String fileName = "bark.wav";
+
+		new Thread(() -> {
+			try
+			{
+				File audioFile = new File(fileName);
+
+				try (AudioInputStream audioStream = AudioSystem
+						.getAudioInputStream(audioFile))
+				{
+					Clip clip = AudioSystem.getClip();
+					clip.open(audioStream);
+
+					// Start playing sound
+					clip.start();
+
+					// Let the clip finish
+					Thread.sleep(clip.getMicrosecondLength() / 1000);
+
+					// Close the clip
+					clip.close();
+				}
+				catch (FileNotFoundException e)
+				{
+					System.out.println("Couldn't find file " + fileName);
+				}
+			}
+			catch (Exception e)
+			{
+				System.out.println("Unable to play audio");
+				e.printStackTrace();
+			}
+
+			// Test if the method is being called properly
+			System.out.println("bark.");
+		}).start();
 	}
 }
