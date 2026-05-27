@@ -186,7 +186,7 @@ public class SwipeView extends JFrame
 	 */
 	private void setBasicInfo(Pet pet)
 	{
-		nameAndAge.setText(pet.getName() + ", " + pet.getAge());
+		nameAndAge.setText(pet.getName() + ", " + pet.getAge() + ",");
 		breed.setText(pet.getType());
 	}
 
