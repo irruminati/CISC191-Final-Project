@@ -123,7 +123,12 @@ public class SwipeView extends JFrame
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		// Create the "no" button
-		noButton = new JButton("No");
+		noButton = new JButton("X");
+		noButton.setBackground(Color.RED);
+		noButton.setOpaque(true);
+		noButton.setContentAreaFilled(true);
+		noButton.setBorderPainted(false);
+		noButton.setFocusPainted(false);
 		buttonPanel.add(noButton);
 		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
 
@@ -131,15 +136,17 @@ public class SwipeView extends JFrame
 		buttonPanel.add(Box.createHorizontalGlue());
 
 		// Create the "yes" button
-		yesButton = new JButton("Yes");
+		yesButton = new JButton("✔");
+		yesButton.setBackground(new Color(34, 139, 34)); // Custom green color
+		yesButton.setOpaque(true);
+		yesButton.setContentAreaFilled(true);
+		yesButton.setBorderPainted(false);
+		yesButton.setFocusPainted(false);
 		buttonPanel.add(yesButton);
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
-		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
-		// BorderLayout.NORTH);
+		// Put buttons at the bottom of the app
 		add(buttonPanel, BorderLayout.SOUTH);
-		// add(mainInfoPanel, BorderLayout.CENTER);
-		// add(extInfo, BorderLayout.CENTER);
 
 		JPanel allInfoPanel = new JPanel();
 		allInfoPanel.add(mainInfoPanel);
@@ -198,9 +205,8 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio() + "\n");
-		
-		//TODO add bulleted info, prob write a method for this in relative pet subclasses
+		bioParagraph.setText(pet.getBio() + "\n\n" + pet.getName()
+				+ " joined us on " + pet.getIntakeDate());
 	}
 
 	public void updatePetView(Pet pet)
