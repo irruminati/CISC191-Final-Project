@@ -36,10 +36,6 @@ public class App
 		// TEST PET 1
 		LocalDate testDate = LocalDate.of(2026, Month.JANUARY, 25);
 
-		// URL felix = new URL(
-		// "https://images.dog.ceo//breeds//mastiff-tibetan//n02108551_1409.jpg");
-		// ImageIcon img = new ImageIcon(felix);
-
 		ImageIcon felixPic = new ImageIcon("./images/kuri.JPG");
 
 		Pet testPet = new Dog("Felix", 3, "M", testDate,
@@ -59,17 +55,17 @@ public class App
 		Pet testPet3 = new Bird("Ole", 15, "M", testDate3, "", olePic);
 		testPet3.setType("Bird");
 
-		// Create test repository
+		// Create repository
 		LinkedList<Pet> petList = new LinkedList<Pet>();
 		PetRepository petRepo = new PetRepository(petList);
 
 		// Add testPets to the test repository
-		petRepo.addPet(testPet);
-		petRepo.addPet(testPet2);
-		petRepo.addPet(testPet3);
+		// petRepo.addPet(testPet);
+		// petRepo.addPet(testPet2);
+		// petRepo.addPet(testPet3);
 
-		// CSVPetReader reader = new CSVPetReader();
-		// petRepo.addAllPets(reader.readFile("./Pets.txt"));
+		CSVPetReader reader = new CSVPetReader();
+		petRepo.addAllPets(reader.readFile("./Pets.txt"));
 
 		SwipeView swipeView = new SwipeView(petRepo);
 

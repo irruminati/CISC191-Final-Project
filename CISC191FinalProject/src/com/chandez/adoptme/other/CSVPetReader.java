@@ -98,17 +98,9 @@ public class CSVPetReader
 		String name = fields[1].trim();
 		int age = Integer.parseInt(fields[2].trim());
 		String sex = fields[3].trim();
-		if (sex.equalsIgnoreCase("F"))
-		{
-			sex = "Female";
-		}
-		else
-		{
-			sex = "Male";
-		}
-		LocalDate intakeDate = LocalDate.parse(fields[3].trim());
-		String bio = fields[4].trim();
-		String picName = fields[5].trim();
+		LocalDate intakeDate = LocalDate.parse(fields[4].trim());
+		String bio = fields[5].trim();
+		String picName = fields[6].trim();
 
 		// Create an image from the parsed file name
 		ImageIcon pic = new ImageIcon("./images/" + picName);

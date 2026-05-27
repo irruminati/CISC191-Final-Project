@@ -10,9 +10,14 @@ import javax.swing.ImageIcon;
  * @author Rumi Chadwick
  * @author Ale Hernandez
  *
- *         Version: 2026-04-15
+ *         Version: 2026-05-27
  */
 
+/**
+ * Pets represent animals at the shelter that users can swipe through to find an
+ * one they want to adopt. They have a descriptive biography and a photo, as
+ * well as other general attributes such as name and age.
+ */
 public abstract class Pet
 {
 	private String type;
@@ -144,4 +149,9 @@ public abstract class Pet
 	{
 		this.liked = liked;
 	}
+
+	/**
+	 * Play the respective sound for each animal type
+	 */
+	public abstract void playSound();
 }

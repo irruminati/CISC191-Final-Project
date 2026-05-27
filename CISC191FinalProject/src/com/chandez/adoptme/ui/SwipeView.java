@@ -42,15 +42,18 @@ public class SwipeView extends JFrame
 	public SwipeView(PetRepository petRepo)
 	{
 		super();
-		// TODO Maybe should change this to adhere to MVC ??
+
 		Pet pet = petRepo.getCurrPet();
 
 		setLayout(new BorderLayout());
 
 		// Minimum size of window
 		setMinimumSize(new Dimension(600, 400));
+		// Lock the size of the window
+		setResizable(false);
 		// Close app when window is closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setBackground(Color.BLUE);
 		// App name at the top
 		setTitle("Adopt Me");
 
@@ -74,10 +77,12 @@ public class SwipeView extends JFrame
 		// MAIN PANEL //
 
 		JPanel mainInfoPanel = new JPanel(new BorderLayout());
-		// mainInfoPanel.setLayout(new BorderLayout());
 
 		mainInfoPanel.add(photo, BorderLayout.CENTER);
 		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
+
+		// mainInfoPanel.add(photo, BorderLayout.CENTER);
+		// mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
@@ -88,7 +93,11 @@ public class SwipeView extends JFrame
 
 		bioHeader = new JLabel();
 		bioParagraph = new JTextArea();
-		bioParagraph.setFocusable(false);
+
+		// TODO add constants ?
+		bioParagraph.setBounds(bioParagraph.getX(), bioParagraph.getY(), 300,
+				bioParagraph.getHeight());
+		bioParagraph.setFocusable(false); // Make bio uneditable
 		bioParagraph.setLineWrap(true);
 		bioParagraph.setWrapStyleWord(true);
 
@@ -114,11 +123,20 @@ public class SwipeView extends JFrame
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		// Create the "no" button
+<<<<<<< HEAD
 		noButton = new JButton("✖");
 		noButton.setBackground(Color.RED);
 		noButton.setOpaque(true);
 		noButton.setContentAreaFilled(true);
 		noButton.setBorderPainted(false);
+=======
+		noButton = new JButton("X");
+		noButton.setBackground(Color.RED);
+		noButton.setOpaque(true);
+		noButton.setContentAreaFilled(true);
+		noButton.setBorderPainted(false);
+		noButton.setFocusPainted(false);
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		buttonPanel.add(noButton);
 		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
 
@@ -126,19 +144,31 @@ public class SwipeView extends JFrame
 		buttonPanel.add(Box.createHorizontalGlue());
 
 		// Create the "yes" button
+<<<<<<< HEAD
 		yesButton = new JButton("✓");
 		yesButton.setBackground(new Color(34, 139, 34));		
 		yesButton.setOpaque(true);
 		yesButton.setContentAreaFilled(true);
 		yesButton.setBorderPainted(false);
+=======
+		yesButton = new JButton("✔");
+		yesButton.setBackground(new Color(34, 139, 34)); // Custom green color
+		yesButton.setOpaque(true);
+		yesButton.setContentAreaFilled(true);
+		yesButton.setBorderPainted(false);
+		yesButton.setFocusPainted(false);
+>>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		buttonPanel.add(yesButton);
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
-		// add(new JLabel("Programmed by Rumi Chadwick and Ale Hernandez"),
-		// BorderLayout.NORTH);
+		// Put buttons at the bottom of the app
 		add(buttonPanel, BorderLayout.SOUTH);
-		add(mainInfoPanel, BorderLayout.CENTER);
-		add(extInfo, BorderLayout.EAST);
+
+		JPanel allInfoPanel = new JPanel();
+		allInfoPanel.add(mainInfoPanel);
+		allInfoPanel.add(extInfo);
+
+		add(allInfoPanel, BorderLayout.CENTER);
 
 		// Make the window visible
 		setVisible(true);
@@ -179,7 +209,7 @@ public class SwipeView extends JFrame
 	 */
 	private void setBasicInfo(Pet pet)
 	{
-		nameAndAge.setText(pet.getName() + ", " + pet.getAge());
+		nameAndAge.setText(pet.getName() + ", " + pet.getAge() + ",");
 		breed.setText(pet.getType());
 	}
 
@@ -191,7 +221,8 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio());
+		bioParagraph.setText(pet.getBio() + "\n\n" + pet.getName()
+				+ " joined us on " + pet.getIntakeDate());
 	}
 
 	public void updatePetView(Pet pet)
