@@ -1,19 +1,19 @@
-Dog, Gibby, 2, Male, 2024-12-06, Energetic and funny-looking, No, gibby.jpg
-Dog, Finn, 2, Male, 2024-12-06, Calm and clingy, No, finn.jpg 
-Cat, Kuri, 12, Female, 2013-05-20, Lazy and personable, Yes, kuri.JPG
-Dog, Toad, 6, Male, 2019-09-13, Jumpy and loud and anxious, No, toad.jpeg
-Cat, Daisy, 12, Female, 2014-02-23, Quiet and sleepy, Yes, daisy.jpeg 
-Cat, Bear-Bear, 1, Female, 2025-12-07, Crazy and tiny, No, bearbear.jpeg
-Dog, Teddy, 15, Male, 2010-12-12, Loyal and old, No, teddy.jpg
-Dog, Princess, 16, Female, 2010-01-25, Small and licks, Yes, princess.jpg
-Cat, Scamp, 12, Male, 2024-07-30, Mischevious but lovable, Yes, image
-Dog, Baxter, 16, Male, 2010-02-28, Small and anxious, Yes, baxter.jpg
-Dog, Obi, 2, Female, 2024-05-04, Very playful and full of energy, No, obi.jpg
-Dog, Valerie, 7, Female, 2018-09-23, Smart and athletic and a diva, Yes, valerie.jpg
-Bird, Savvy, 9, Female, 2016-10-08, AnNoying and talkative, Yes, savvy.jpeg
-Bird, Lady, 10, Female, 2016-01-09, Softie and loves cookies, No, lady.jpg
-Dog, Peyton, 1, Female, 2025-12-04, Loyal and loves good cuddles, Yes, peyton.jpg
-Dog, Aang, 1, Male, 2025-08-20, Nice and funny, Yes, aang.jpg
-Dog, Sammy, 13, Male, 2012-11-07, Quiet and scaredy cat, Yes, sammy.jpg
-Bird, Petunia, 4, Female, 2022-04-21, Likes to sing loudly and likes naps, Yes, petunia.jpg
-Cat, Walle, 5, Male, 2020-06-16, Undisturbed but likes to disturb, No, walle.jpg
+Dog, Gibby, 2, Male, 2024-12-06, Energetic and funny-looking, gibby.jpg
+Dog, Finn, 2, Male, 2024-12-06, Calm and clingy, finn.jpg 
+Cat, Kuri, 12, Female, 2013-05-20, Lazy and personable, kuri.JPG
+Dog, Toad, 6, Male, 2019-09-13, Jumpy and loud and anxious, toad.jpeg
+Cat, Daisy, 12, Female, 2014-02-23, Quiet and sleepy, daisy.jpeg 
+Cat, Bear-Bear, 1, Female, 2025-12-07, Crazy and tiny, bearbear.jpeg
+Dog, Teddy, 15, Male, 2010-12-12, Loyal and old, teddy.jpg
+Dog, Princess, 16, Female, 2010-01-25, Small and licks, princess.jpg
+Cat, Scamp, 12, Male, 2024-07-30, Mischevious but lovable, image
+Dog, Baxter, 16, Male, 2010-02-28, Small and anxious, Baxter.jpg
+Dog, Obi, 2, Female, 2024-05-04, Very playful and full of energy, obi.jpg
+Dog, Valerie, 7, Female, 2018-09-23, Smart and athletic and a diva, valerie.jpg
+Bird, Savvy, 9, Female, 2016-10-08, Annoying and talkative, savvy.jpeg
+Bird, Lady, 10, Female, 2016-01-09, Softie and loves cookies, lady.jpg
+Dog, Peyton, 1, Female, 2025-12-04, Loyal and loves good cuddles, peyton.jpg
+Dog, Aang, 1, Male, 2025-08-20, Nice and funny, aang.jpg
+Dog, Sammy, 13, Male, 2012-11-07, Quiet and scaredy cat, sammy.jpg
+Bird, Petunia, 4, Female, 2022-04-21, Likes to sing loudly and likes naps, petunia.jpg
+Cat, Walle, 5, Male, 2020-06-16, Undisturbed but likes to disturb, walle.jpg
