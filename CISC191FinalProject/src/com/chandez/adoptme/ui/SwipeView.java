@@ -123,20 +123,16 @@ public class SwipeView extends JFrame
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		// Create the "no" button
-<<<<<<< HEAD
 		noButton = new JButton("✖");
 		noButton.setBackground(Color.RED);
 		noButton.setOpaque(true);
 		noButton.setContentAreaFilled(true);
-		noButton.setBorderPainted(false);
-=======
 		noButton = new JButton("X");
 		noButton.setBackground(Color.RED);
 		noButton.setOpaque(true);
 		noButton.setContentAreaFilled(true);
 		noButton.setBorderPainted(false);
 		noButton.setFocusPainted(false);
->>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		buttonPanel.add(noButton);
 		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
 
@@ -144,20 +140,12 @@ public class SwipeView extends JFrame
 		buttonPanel.add(Box.createHorizontalGlue());
 
 		// Create the "yes" button
-<<<<<<< HEAD
-		yesButton = new JButton("✓");
-		yesButton.setBackground(new Color(34, 139, 34));		
-		yesButton.setOpaque(true);
-		yesButton.setContentAreaFilled(true);
-		yesButton.setBorderPainted(false);
-=======
 		yesButton = new JButton("✔");
 		yesButton.setBackground(new Color(34, 139, 34)); // Custom green color
 		yesButton.setOpaque(true);
 		yesButton.setContentAreaFilled(true);
 		yesButton.setBorderPainted(false);
 		yesButton.setFocusPainted(false);
->>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
 		buttonPanel.add(yesButton);
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
