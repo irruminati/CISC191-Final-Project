@@ -1,23 +1,5 @@
-<<<<<<< HEAD
-Dog, Spike, 2, 2026-01-14, He is mean to men and likes girls, spike.jpg
-Dog, Katara, 2, 2024-12-06, Calm and clingy, katara.jpg 
-Cat, Kuri, 12, 2013-05-20, Lazy and personable, image3
-Dog, Toad, 6, 2019-09-13, Jumpy and loud and anxious, toad.jpg
-Cat, Daisy, 12, 2014-02-23, Quiet and sleepy, image5 
-Cat, Hamilton, 1, 2025-12-07, Crazy and tiny, image6
-Dog, Teddy, 15, 2010-12-12, Loyal and old, teddy.jpg
-Dog, Princess, 16, 2010-01-25, Small and licks, princess.jpg
-Dog, Baxter, 16, 2010-02-28, Small and anxious, baxter.jpg
-Dog, Obi, 2, 2024-05-04, Very playful and full of energy, obi.jpg
-Dog, Valerie, 7, 2018-09-23, Smart and athletic and a diva, valerie.jpg
-Bird, Ahoy, 9, 2016-10-08, Annoying and talkative, image12
-Bird, Lady, 10, 2016-01-09, Softie and loves cookies, image13
-Dog, Peyton, 1, 2025-12-04, Loyal and loves good cuddles, peyton.jpg
-Dog, Aang, 1, 2025-08-20, Nice and funny, aang.jpg
-Dog, Sammy, 13, 2012-11-07, Quiet and scaredy cat, sammy.jpg
-Bird, Petunia, 4, 2022-04-21, Likes to sing loudly and likes naps, image17
-Cat, Walle, 5, 2020-06-16, Undisturbed but likes to disturb, image18
-=======
+Cat, Spike, 2, Male, 2026-01-14, He is mean to men and likes girls, spike.JPG
+Dog, Katara, 2, Female, 2024-12-06, Calm and clingy, katara.jpg 
 Dog, Gibby, 2, Male, 2024-12-06, Energetic and funny-looking, gibby.jpg
 Dog, Finn, 2, Male, 2024-12-06, Calm and clingy, finn.jpg 
 Cat, Kuri, 12, Female, 2013-05-20, Lazy and personable, kuri.JPG
@@ -26,10 +8,10 @@ Cat, Daisy, 12, Female, 2014-02-23, Quiet and sleepy, daisy.jpeg
 Cat, Bear-Bear, 1, Female, 2025-12-07, Crazy and tiny, bearbear.jpeg
 Dog, Teddy, 15, Male, 2010-12-12, Loyal and old, teddy.jpg
 Dog, Princess, 16, Female, 2010-01-25, Small and licks, princess.jpg
-Cat, Scamp, 12, Male, 2024-07-30, Mischevious but lovable, image
+Cat, Scamp, 12, Male, 2024-07-30, Mischevious but lovable, scamp.jpg
 Dog, Baxter, 16, Male, 2010-02-28, Small and anxious, Baxter.jpg
 Dog, Obi, 2, Female, 2024-05-04, Very playful and full of energy, obi.jpg
-Dog, Valerie, 7, Female, 2018-09-23, Smart and athletic and a diva, valerie.jpg
+Dog, Valerie, 7, Female, 2018-09-23, Smart and athletic and a diva, valerie.jpeg
 Bird, Savvy, 9, Female, 2016-10-08, Annoying and talkative, savvy.jpeg
 Bird, Lady, 10, Female, 2016-01-09, Softie and loves cookies, lady.jpg
 Dog, Peyton, 1, Female, 2025-12-04, Loyal and loves good cuddles, peyton.jpg
@@ -37,4 +19,3 @@ Dog, Aang, 1, Male, 2025-08-20, Nice and funny, aang.jpg
 Dog, Sammy, 13, Male, 2012-11-07, Quiet and scaredy cat, sammy.jpg
 Bird, Petunia, 4, Female, 2022-04-21, Likes to sing loudly and likes naps, petunia.jpg
 Cat, Walle, 5, Male, 2020-06-16, Undisturbed but likes to disturb, walle.jpg
->>>>>>> branch 'main' of https://github.com/irruminati/CISC191-Final-Project.git
