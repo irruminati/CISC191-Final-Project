@@ -1,21 +1,21 @@
-Cat, Spike, 2, Male, 2026-01-14, He is mean to men and likes girls, spike.JPG
-Dog, Katara, 2, Female, 2024-12-06, Calm and clingy, katara.jpg 
-Dog, Gibby, 2, Male, 2024-12-06, Energetic and funny-looking, gibby.jpg
-Dog, Finn, 2, Male, 2024-12-06, Calm and clingy, finn.jpg 
-Cat, Kuri, 12, Female, 2013-05-20, Lazy and personable, kuri.JPG
-Dog, Toad, 6, Male, 2019-09-13, Jumpy and loud and anxious, toad.jpeg
-Cat, Daisy, 12, Female, 2014-02-23, Quiet and sleepy, daisy.jpeg 
-Cat, Bear-Bear, 1, Female, 2025-12-07, Crazy and tiny, bearbear.jpeg
-Dog, Teddy, 15, Male, 2010-12-12, Loyal and old, teddy.jpg
-Dog, Princess, 16, Female, 2010-01-25, Small and licks, princess.jpg
-Cat, Scamp, 12, Male, 2024-07-30, Mischevious but lovable, scamp.jpg
-Dog, Baxter, 16, Male, 2010-02-28, Small and anxious, Baxter.jpg
-Dog, Obi, 2, Female, 2024-05-04, Very playful and full of energy, obi.jpg
-Dog, Valerie, 7, Female, 2018-09-23, Smart and athletic and a diva, valerie.jpeg
-Bird, Savvy, 9, Female, 2016-10-08, Annoying and talkative, savvy.jpeg
-Bird, Lady, 10, Female, 2016-01-09, Softie and loves cookies, lady.jpg
-Dog, Peyton, 1, Female, 2025-12-04, Loyal and loves good cuddles, peyton.jpg
-Dog, Aang, 1, Male, 2025-08-20, Nice and funny, aang.jpg
-Dog, Sammy, 13, Male, 2012-11-07, Quiet and scaredy cat, sammy.jpg
-Bird, Petunia, 4, Female, 2022-04-21, Likes to sing loudly and likes naps, petunia.jpg
-Cat, Walle, 5, Male, 2020-06-16, Undisturbed but likes to disturb, walle.jpg
+Cat, Spike, 4, Male, 2026-01-14, Mean to boys but affectionate with girls､ Spike is the pinnacle of a feline ladies man. With glossy black fur､ this diva is the perfect fit for a household looking for a bit of personality., spike.JPG
+Dog, Katara, 6, Female, 2024-12-06, Looking for a companion for your next hike? Katara is your gal! Be sure to let her out of the house often､ or she’ll find a way to vent her energy indoors., katara.jpg 
+Dog, Gibby, 5, Male, 2024-12-06, This handsome specimen is just as silly as he looks. Gibby loves to hide in nooks and crannies before jumping out to surprise you. Not recommended for a home with seniors or small children., gibby.jpg
+Bird, Lady, 10, Female, 2016-01-09, Don’t let her sharp claws fool you: this beauty is a big old softie. Lady wants nothing more than to eat cookies and preen herself all day. She’s not too loud､ and fits well in almost any environment., lady.jpg
+Dog, Finn, 1, Male, 2025-12-06, Shy and clingy､ Finn is the baby of our group. He’s looking for an owner to give him plenty of cuddles and kisses to bring him out of his shell. Behaves well with children., finn.jpg 
+Cat, Kuri, 12, Female, 2013-05-20, This queen answers to no one! Kuri is lazy and pampered､ but she’s so charming you’ll find yourself loving her anyway. She gets along well with anyone､ just don’t forget to brush her everyday., kuri.JPG
+Dog, Toad, 6, Male, 2019-09-13, A sweetheart with an anxious disposition､ Toad loves gnawing on his favorite chew toys. He gets a bit loud when he doesn’t think he’s getting enough love､ and would fit best in a household with a big family., toad.jpeg
+Cat, Daisy, 12, Female, 2014-02-23, With 12 years under her belt､ all Daisy wants is a sunny spot to nap for hours. She’s calm and austere- the perfect reading buddy for someone looking for a bit of quiet company., daisy.jpeg 
+Cat, Bear-Bear, 14, Female, 2025-12-07, Lookout! Bear-Bear is our resident mischief maker. Her tiny size allows her to get into all sorts of trouble. Despite that､ she’s lovable､ sweet､ and amazingly behaved with children., bearbear.jpeg
+Dog, Teddy, 15, Male, 2010-12-12, No one is as dedicated of a guard dog as Teddy. Standing tall､ Teddy protects those he loves with dignity. You’ll never have another anxious night with loyal Teddy sleeping at the foot of your bed., teddy.jpg
+Bird, Savvy, 9, Female, 2016-10-08, Have you ever had an argument with a bird? Savvy is talkative and energetic､ and she’ll do anything to have her opinions heard. We’ve grown to love her here and we hope you can､ too!, savvy.jpeg
+Dog, Princess, 16, Female, 2010-01-25, Just as her name suggests､ this puppy loves to be pampered. When she’s not showering you with licks､ Princess likes to strut her stuff for all to see. Not recommended for households with other dogs., princess.jpg
+Cat, Scamp, 12, Male, 2024-07-30, Mischievous but lovable､ Scamp spends his days chasing dust bunnies and getting stuck in small spaces. He loves to rub up against your feet and meow for attention. Who wouldn’t fall in love with this handsome devil?, scamp.jpg
+Dog, Baxter, 2, Male, 2025-02-28, This puppy is all bark and no bite. Baxter is scared of vacuums､ spiders､ and strong gusts of wind. Even so､ he’s loyal with every inch of his tiny､ fluffy body. Behaves very well with small children., Baxter.jpg
+Dog, Obi, 3, Female, 2024-05-04, With a brave heart and adventurous spirit､ Obi is every traveller’s dream pet. She loves hiking､snow､ and even enjoys the occasional swim! She’s looking for someone to match her active lifestyle., obi.jpg
+Dog, Valerie, 7, Female, 2018-09-23, Athletic and sassy､ this dog knows exactly what she wants. Valerie may be a diva､ but she’s a diva with direction. She’s incredibly intelligent and gets along with everyone- as long as she’s in the right mood., valerie.jpeg
+Dog, Peyton, 8, Female, 2025-12-04, When she’s not cuddling with you､ Peyton will be getting all of your other pets in line. She’s fiercely loyal and runs a tight ship. Peyton thrives in homes with many pets､ but still loves one-on-one cuddle time., peyton.jpg
+Dog, Aang, 6, Male, 2025-08-20, Just like the airbender he was named after､ Aang is a dedicated pacifist. He’s a gentle scaredy-cat who wouldn’t hurt a fly. We strongly recommend him for a house with young children or seniors., aang.jpg
+Dog, Sammy, 1, Male, 2025-11-07, This jokester lights up every room he walks in. Sammy is a cheerful puppy who’s always got something to say. He loves to play rough and tumble around in the dirt､ and gets along well with other dogs., sammy.jpg
+Bird, Petunia, 4, Female, 2022-04-21, Dainty and ladylike､ Petunia loves to sing for all to hear. When she’s not lulling you to sleep､ she’s likely taking a nap herself. This songbird wants nothing more than to snack and sleep to her heart’s content., petunia.jpg
+Cat, Walle, 5, Male, 2020-06-16, As alien as he looks､ Walle is just your average cat. His only quirk is waking you up at 6am for food and head scratches. Walle is well behaved and personable- an ideal cat for most households., walle.jpg
