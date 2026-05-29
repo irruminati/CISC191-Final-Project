@@ -75,7 +75,7 @@ public class AdoptionWindow extends JFrame
 				javax.swing.BorderFactory.createEmptyBorder(BORDER_PADDING,
 						BORDER_PADDING, BORDER_PADDING, BORDER_PADDING));
 
-		//Label at the the top 
+		// Label at the the top 
 		titleLabel = new JLabel("User Information");
 		titleLabel.setAlignmentX(CENTER_ALIGNMENT);
 		titleLabel
