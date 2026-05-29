@@ -16,9 +16,11 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Toolkit;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
@@ -38,6 +40,9 @@ public class SwipeView extends JFrame
 
 	private JButton yesButton;
 	private JButton noButton;
+	
+	private static final String BACKGROUND_PATH =
+			"/Users/alehzp/git/CISC191-Final-Project/CISC191FinalProject/images/adoptme_bg.jpg"; 
 
 	public SwipeView(PetRepository petRepo)
 	{
@@ -56,6 +61,24 @@ public class SwipeView extends JFrame
 		getContentPane().setBackground(Color.BLUE);
 		// App name at the top
 		setTitle("Adopt Me");
+		
+		//Background//
+		
+		ImageIcon backgroundIcon = new ImageIcon(BACKGROUND_PATH);
+		Image backgroundImage = backgroundIcon.getImage();
+
+		JPanel backgroundPanel = new JPanel(new BorderLayout())
+		{
+			@Override
+			protected void paintComponent(Graphics g)
+			{
+				super.paintComponent(g);
+
+				g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+			}
+		};
+
+		setContentPane(backgroundPanel);
 
 		// PROFILE PICTURE //
 
@@ -76,17 +99,20 @@ public class SwipeView extends JFrame
 
 		// MAIN PANEL //
 
-		JPanel mainInfoPanel = new JPanel(new BorderLayout());
-
-		mainInfoPanel.add(photo, BorderLayout.CENTER);
+		JPanel mainInfoPanel = new JPanel(new BorderLayout()); // rumi 
+		
+		mainInfoPanel.setOpaque(false); //me
+		
+		mainInfoPanel.add(photo, BorderLayout.CENTER); //rumi
 		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
-
+		
 		// mainInfoPanel.add(photo, BorderLayout.CENTER);
 		// mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
 		JPanel extInfo = new JPanel();
+		extInfo.setOpaque(false); //me
 		extInfo.setLayout(new GridBagLayout());
 		extInfo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20)); // Left/right
 																			// margins
@@ -97,6 +123,7 @@ public class SwipeView extends JFrame
 		// TODO add constants ?
 		bioParagraph.setBounds(bioParagraph.getX(), bioParagraph.getY(), 300,
 				bioParagraph.getHeight());
+		//bioParagraph.setOpaque(false); //me
 		bioParagraph.setFocusable(false); // Make bio uneditable
 		bioParagraph.setLineWrap(true);
 		bioParagraph.setWrapStyleWord(true);
@@ -119,6 +146,7 @@ public class SwipeView extends JFrame
 
 		// Create a container panel for the buttons with a box layout
 		JPanel buttonPanel = new JPanel();
+		buttonPanel.setOpaque(false); //me
 		// Align them horizontally
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
@@ -153,6 +181,7 @@ public class SwipeView extends JFrame
 		add(buttonPanel, BorderLayout.SOUTH);
 
 		JPanel allInfoPanel = new JPanel();
+		allInfoPanel.setOpaque(false); //me
 		allInfoPanel.add(mainInfoPanel);
 		allInfoPanel.add(extInfo);
 
