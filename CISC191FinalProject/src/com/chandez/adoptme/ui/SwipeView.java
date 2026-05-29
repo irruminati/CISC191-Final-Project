@@ -16,6 +16,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -86,8 +87,6 @@ public class SwipeView extends JFrame
 
 		JPanel extInfo = new JPanel();
 		extInfo.setLayout(new GridBagLayout());
-		extInfo.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 5)); // Left/right
-																			// margins
 
 		bioHeader = new JLabel();
 		bioParagraph = new JTextArea();
@@ -150,7 +149,7 @@ public class SwipeView extends JFrame
 
 		JPanel allInfoPanel = new JPanel();
 		allInfoPanel.add(mainInfoPanel);
-		allInfoPanel.add(Box.createHorizontalStrut(30));
+		allInfoPanel.add(Box.createHorizontalStrut(10));
 		allInfoPanel.add(extInfo);
 
 		add(allInfoPanel, BorderLayout.CENTER);
@@ -206,7 +205,8 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio().indent(5) + "\n\n" + pet.getName()
+		bioHeader.setFont(new Font("Dialog", Font.BOLD, 15));
+		bioParagraph.setText(pet.getBio().indent(5) + "\n" + pet.getName()
 				+ " joined us on " + pet.getIntakeDate());
 	}
 
