@@ -25,6 +25,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import com.chandez.adoptme.domain.Pet;
 import com.chandez.adoptme.domain.PetRepository;
 import com.chandez.adoptme.exceptions.AddressException;
 import com.chandez.adoptme.exceptions.NameException;
@@ -41,11 +42,13 @@ import com.chandez.adoptme.ui.AdoptionWindow;
 public class AdoptionWindowController
 {
 	private AdoptionWindow adoptionWindow;
+	private Pet pet;
 
 	public AdoptionWindowController(AdoptionWindow adoptionWindow,
-			PetRepository repo)
+			PetRepository petRepo)
 	{
 		this.adoptionWindow = adoptionWindow;
+		pet = petRepo.getCurrPet();
 
 		adoptionWindow.getSubmitButton()
 				.addActionListener(e -> submitUserInfo());
@@ -64,8 +67,8 @@ public class AdoptionWindowController
 			adoptionWindow.clearError();
 
 			JOptionPane.showMessageDialog(adoptionWindow,
-					"Your information was submitted");
-
+					"Your information was submitted.\n" + pet.getName()
+							+ " can't wait to meet you!");
 			adoptionWindow.closeWindow();
 		}
 		catch (NameException | AddressException | PhoneNumberException ex)
