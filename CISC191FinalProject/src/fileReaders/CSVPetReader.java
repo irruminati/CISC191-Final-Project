@@ -1,4 +1,4 @@
-package com.chandez.adoptme.other;
+package fileReaders;
 
 import java.io.File;
 import java.io.FileNotFoundException;

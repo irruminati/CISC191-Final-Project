@@ -13,8 +13,9 @@ package com.chandez.adoptme;
 
 import com.chandez.adoptme.controllers.AdoptionWindowController;
 import com.chandez.adoptme.domain.*;
-import com.chandez.adoptme.other.CSVPetReader;
 import com.chandez.adoptme.ui.*;
+
+import fileReaders.CSVPetReader;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

@@ -17,10 +17,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.Insets;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
@@ -53,7 +55,7 @@ public class SwipeView extends JFrame
 		setLayout(new BorderLayout());
 
 		// Minimum size of window
-		setMinimumSize(new Dimension(600, 400));
+		setMinimumSize(new Dimension(500, 400));
 		// Lock the size of the window
 		setResizable(false);
 		// Close app when window is closed
@@ -105,25 +107,19 @@ public class SwipeView extends JFrame
 		
 		mainInfoPanel.add(photo, BorderLayout.CENTER); //rumi
 		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
-		
-		// mainInfoPanel.add(photo, BorderLayout.CENTER);
-		// mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
 		JPanel extInfo = new JPanel();
 		extInfo.setOpaque(false); //me
 		extInfo.setLayout(new GridBagLayout());
-		extInfo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20)); // Left/right
-																			// margins
 
 		bioHeader = new JLabel();
 		bioParagraph = new JTextArea();
 
-		// TODO add constants ?
 		bioParagraph.setBounds(bioParagraph.getX(), bioParagraph.getY(), 300,
 				bioParagraph.getHeight());
-		//bioParagraph.setOpaque(false); //me
+
 		bioParagraph.setFocusable(false); // Make bio uneditable
 		bioParagraph.setLineWrap(true);
 		bioParagraph.setWrapStyleWord(true);
@@ -162,6 +158,7 @@ public class SwipeView extends JFrame
 		noButton.setBorderPainted(false);
 		noButton.setFocusPainted(false);
 		buttonPanel.add(noButton);
+		// Attach the button listener
 		noButton.addActionListener(new SwipeViewListener(petRepo, this, false));
 
 		// Spacer to push both buttons to the bottom corners
@@ -175,6 +172,7 @@ public class SwipeView extends JFrame
 		yesButton.setBorderPainted(false);
 		yesButton.setFocusPainted(false);
 		buttonPanel.add(yesButton);
+		// Attach the button listener
 		yesButton.addActionListener(new SwipeViewListener(petRepo, this, true));
 
 		// Put buttons at the bottom of the app
@@ -183,6 +181,7 @@ public class SwipeView extends JFrame
 		JPanel allInfoPanel = new JPanel();
 		allInfoPanel.setOpaque(false); //me
 		allInfoPanel.add(mainInfoPanel);
+		allInfoPanel.add(Box.createHorizontalStrut(10));
 		allInfoPanel.add(extInfo);
 
 		add(allInfoPanel, BorderLayout.CENTER);
@@ -211,7 +210,7 @@ public class SwipeView extends JFrame
 				photo.setPreferredSize(new Dimension(300, 300));
 			}
 		}
-		catch (NullPointerException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 			System.out
@@ -238,7 +237,8 @@ public class SwipeView extends JFrame
 	private void setExtInfo(Pet pet)
 	{
 		bioHeader.setText("All about " + pet.getName() + "!");
-		bioParagraph.setText(pet.getBio() + "\n\n" + pet.getName()
+		bioHeader.setFont(new Font("Dialog", Font.BOLD, 15));
+		bioParagraph.setText(pet.getBio().indent(5) + "\n" + pet.getName()
 				+ " joined us on " + pet.getIntakeDate());
 	}
 

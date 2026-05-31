@@ -22,6 +22,9 @@ import javax.swing.ImageIcon;
  */
 public class Bird extends Pet
 {
+	private File audioFile; // File for bark sound effect
+	private Clip clip; // Clip of bark sound effect
+
 	/**
 	 * @param species
 	 * @param name
@@ -34,6 +37,23 @@ public class Bird extends Pet
 			String bio, ImageIcon photo)
 	{
 		super(name, age, sex, intakeDate, bio, photo);
+
+		String fileName = "./sounds/tweet.wav";
+		try
+		{
+			audioFile = new File(fileName);
+			// Pre-load the clip to avoid lag later
+			try (AudioInputStream audioStream = AudioSystem
+					.getAudioInputStream(audioFile))
+			{
+				clip = AudioSystem.getClip();
+				clip.open(audioStream);
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("Couldn't create file " + fileName);
+		}
 	}
 
 	public String getType()
@@ -44,41 +64,26 @@ public class Bird extends Pet
 	@Override
 	public void playSound()
 	{
-		String fileName = "tweet.wav";
+		String fileName = "./sounds/tweet.wav";
 
 		new Thread(() -> {
 			try
 			{
-				File audioFile = new File(fileName);
+				// Reset the preloaded clip to the beginning
+				clip.stop();
+				clip.setFramePosition(0);
 
-				try (AudioInputStream audioStream = AudioSystem
-						.getAudioInputStream(audioFile))
-				{
-					Clip clip = AudioSystem.getClip();
-					clip.open(audioStream);
-
-					// Start playing sound
-					clip.start();
-
-					// Let the clip finish
-					Thread.sleep(clip.getMicrosecondLength() / 1000);
-
-					// Close the clip
-					clip.close();
-				}
-				catch (FileNotFoundException e)
-				{
-					System.out.println("Couldn't find file " + fileName);
-				}
+				// Play audio
+				clip.start();
 			}
 			catch (Exception e)
 			{
-				System.out.println("Unable to play audio");
+				System.out.println("Error playing clip");
 				e.printStackTrace();
 			}
-
-			// Test if the method is being called properly
-			System.out.println("tweet.");
 		}).start();
+
+		// Test if the method is being called properly
+		// System.out.println("tweet.");
 	}
 }
