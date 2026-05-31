@@ -11,10 +11,9 @@
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of PhoneNumberException is ...
+ * Purpose: The responsibility of PhoneNumberException is to outline what to do if this exception is thrown 
  *
- * PhoneNumberException is-a ...
- * PhoneNumberException is ...
+ * PhoneNumberException is-a Exception 
  */
 public class PhoneNumberException extends Exception
 {	

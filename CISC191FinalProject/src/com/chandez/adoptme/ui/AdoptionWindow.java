@@ -26,10 +26,9 @@ import javax.swing.SwingUtilities;
 import com.chandez.adoptme.controllers.AdoptionWindowController;
 
 /**
- * Purpose: The responsibility of AdoptionWindow is ...
+ * Purpose: The responsibility of AdoptionWindow is to outline how the window itself will look. 
  *
- * AdoptionWindow is-a ...
- * AdoptionWindow is ...
+ * AdoptionWindow is-a Window that pops after the user has gone through all the pets. 
  */
 public class AdoptionWindow extends JFrame
 {

@@ -1,8 +1,4 @@
-/**
- * Lead Author(s):
- * 
-/**
- * Lead Author(s):
+/** Lead Author(s):
  * 
  * @author Rumi Chadwick
  * @author Ale Hernandez
@@ -26,10 +22,9 @@ import com.chandez.adoptme.exceptions.UserValidator;
 import com.chandez.adoptme.ui.AdoptionWindow;
 
 /**
- * Purpose: The reponsibility of AdoptionWindowController is ...
+ * Purpose: The responsibility of AdoptionWindowController is to validate the information of the user, and focuses on the submit button.
  *
- * AdoptionWindowController is-a ...
- * AdoptionWindowController is ...
+ * AdoptionWindowController is-a controller for the "Submit" button.
  */
 public class AdoptionWindowController
 {

@@ -11,10 +11,9 @@
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of NameException is ...
+ * Purpose: The responsibility of NameException is to outline what to do if this exception is thrown 
  *
- * NameException is-a ...
- * NameException is ...
+ * NameException is-a Exception
  */
 public class NameException extends Exception
 {

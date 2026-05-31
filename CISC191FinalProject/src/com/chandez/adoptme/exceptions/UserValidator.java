@@ -13,10 +13,9 @@
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of UserValidator is ...
+ * Purpose: The responsibility of UserValidator is to outline what is considered an error of each exceptions. 
  *
- * UserValidator is-a ...
- * UserValidator is ...
+ * UserValidator is-a list of exceptions 
  */
 public class UserValidator
 {

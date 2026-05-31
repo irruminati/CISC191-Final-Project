@@ -11,10 +11,9 @@
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of AddressException is ...
+ * Purpose: The responsibility of AddressException is to outline what to do if this exception is thrown 
  *
- * AddressException is-a ...
- * AddressException is ...
+ * AddressException is-a Exception
  */
 public class AddressException extends Exception 
 {
