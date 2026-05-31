@@ -11,7 +11,6 @@
  */
 package com.chandez.adoptme;
 
-import com.chandez.adoptme.controllers.AdoptionWindowController;
 import com.chandez.adoptme.domain.*;
 import com.chandez.adoptme.ui.*;
 
@@ -19,7 +18,6 @@ import fileReaders.CSVPetReader;
 
 import java.time.LocalDate;
 import java.time.Month;
-
 import javax.swing.ImageIcon;
 
 public class App
