@@ -9,7 +9,6 @@
 package com.chandez.adoptme.domain;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 
 import javax.sound.sampled.AudioInputStream;
@@ -64,7 +63,6 @@ public class Cat extends Pet
 	@Override
 	public void playSound()
 	{
-		String fileName = "./sounds/meow.wav";
 		new Thread(() -> {
 			try
 			{

@@ -21,7 +21,6 @@
  */
 package com.chandez.adoptme.controllers;
 
-import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 

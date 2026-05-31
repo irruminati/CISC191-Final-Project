@@ -20,10 +20,9 @@ import com.chandez.adoptme.domain.*;
  */
 
 /**
- * Purpose: The responsibility of CSVPetReader is ...
- *
- * CSVPetReader is-a ...
- * CSVPetReader is ...
+ * CSVPetReader is responsible for taking in a CSV text file containing
+ * information of different Pets, and turning it into a LinkedList which
+ * can be easily added to a PetRepository.
  */
 public class CSVPetReader
 {
@@ -32,6 +31,14 @@ public class CSVPetReader
 
 	}
 
+	/**
+	 * Reads the contents of a CSV file and parses information for Pets from the
+	 * file. Uses helper methods to create the Pets, then adds them all to a
+	 * list to be returned.
+	 * 
+	 * @param fileName the name of the file to be read
+	 * @return a list of Pet objects
+	 */
 	public LinkedList<Pet> readFile(String fileName)
 	{
 		LinkedList<Pet> list = new LinkedList<Pet>();

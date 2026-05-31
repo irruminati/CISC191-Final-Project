@@ -27,7 +27,6 @@ public abstract class Pet
 	private LocalDate intakeDate;
 	private String bio;
 	private ImageIcon photo;
-	private boolean liked;
 
 	public Pet(String name, int age, String sex, LocalDate intakeDate,
 			String bio, ImageIcon photo)
@@ -97,14 +96,6 @@ public abstract class Pet
 	}
 
 	/**
-	 * @return whether or not the Pet has been "liked" by the user
-	 */
-	public boolean isLiked()
-	{
-		return liked;
-	}
-
-	/**
 	 * Update the species of the Pet
 	 */
 	public void setType(String type)
@@ -138,16 +129,6 @@ public abstract class Pet
 	public void setPhoto(ImageIcon photo)
 	{
 		this.photo = photo;
-	}
-
-	/**
-	 * Like/Unlike the Pet to add or remove it from the liked library
-	 * 
-	 * @param liked true if Pet is liked, false otherwise
-	 */
-	public void setLiked(boolean liked)
-	{
-		this.liked = liked;
 	}
 
 	/**

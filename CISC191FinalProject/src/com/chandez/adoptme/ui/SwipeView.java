@@ -20,13 +20,13 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
-import java.awt.Insets;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
 
 /**
- * Purpose:
+ * SwipeView contains the entire GUI of the application. It displays the
+ * information of whatever Pet is at the top of the PetRepository.
  */
 public class SwipeView extends JFrame
 {
@@ -165,22 +165,18 @@ public class SwipeView extends JFrame
 	 */
 	private void setPhoto(Pet pet)
 	{
-		try
+		ImageIcon icon = pet.getPhoto();
+		if (icon != null)
 		{
-			ImageIcon icon = pet.getPhoto();
-			if (icon != null)
-			{
-				// Scale the image to a reasonable size
-				Image scaledImage = icon.getImage().getScaledInstance(300, 300,
-						Image.SCALE_SMOOTH);
-				ImageIcon scaledIcon = new ImageIcon(scaledImage);
-				photo.setIcon(scaledIcon);
-				photo.setPreferredSize(new Dimension(300, 300));
-			}
+			// Scale the image to a reasonable size
+			Image scaledImage = icon.getImage().getScaledInstance(300, 300,
+					Image.SCALE_SMOOTH);
+			ImageIcon scaledIcon = new ImageIcon(scaledImage);
+			photo.setIcon(scaledIcon);
+			photo.setPreferredSize(new Dimension(300, 300));
 		}
-		catch (Exception e)
+		else
 		{
-			e.printStackTrace();
 			System.out
 					.println("Failed to set photo for " + nameAndAge.getText());
 		}

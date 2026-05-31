@@ -14,7 +14,6 @@ import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 
 /**
@@ -65,8 +64,6 @@ public class Dog extends Pet
 	@Override
 	public void playSound()
 	{
-		String fileName = "./sounds/bark.wav";
-
 		new Thread(() -> {
 			try
 			{

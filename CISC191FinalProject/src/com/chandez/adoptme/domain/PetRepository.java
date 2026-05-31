@@ -1,6 +1,5 @@
 package com.chandez.adoptme.domain;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,8 +17,11 @@ public class PetRepository
 {
 	private Queue<Pet> petList;
 
-	// TODO Eventually this won't take a list and the list will be added after
-	// with the fileReader
+	/**
+	 *  Create a new PetRepository from a given LinkedList of Pets
+	 *  
+	 * @param petList the list of pets
+	 */
 	public PetRepository(LinkedList<Pet> petList)
 	{
 		this.petList = petList;

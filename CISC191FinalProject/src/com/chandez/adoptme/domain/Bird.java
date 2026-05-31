@@ -9,7 +9,6 @@
 package com.chandez.adoptme.domain;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 
 import javax.sound.sampled.AudioInputStream;
@@ -64,8 +63,6 @@ public class Bird extends Pet
 	@Override
 	public void playSound()
 	{
-		String fileName = "./sounds/tweet.wav";
-
 		new Thread(() -> {
 			try
 			{
