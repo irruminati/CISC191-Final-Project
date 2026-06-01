@@ -16,10 +16,14 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+
+import java.awt.Toolkit;
+import java.awt.Insets;
 
 import com.chandez.adoptme.controllers.*;
 import com.chandez.adoptme.domain.*;
@@ -41,6 +45,8 @@ public class SwipeView extends JFrame
 	private JButton yesButton;
 	private JButton noButton;
 
+	private static final String BACKGROUND_PATH = "./images/adoptme_bg.jpg";
+
 	public SwipeView(PetRepository petRepo)
 	{
 		super();
@@ -58,6 +64,25 @@ public class SwipeView extends JFrame
 		getContentPane().setBackground(Color.BLUE);
 		// App name at the top
 		setTitle("Adopt Me");
+
+		// Background//
+
+		ImageIcon backgroundIcon = new ImageIcon(BACKGROUND_PATH);
+		Image backgroundImage = backgroundIcon.getImage();
+
+		JPanel backgroundPanel = new JPanel(new BorderLayout())
+		{
+			@Override
+			protected void paintComponent(Graphics g)
+			{
+				super.paintComponent(g);
+
+				g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(),
+						this);
+			}
+		};
+
+		setContentPane(backgroundPanel);
 
 		// PROFILE PICTURE //
 
@@ -80,16 +105,23 @@ public class SwipeView extends JFrame
 
 		JPanel mainInfoPanel = new JPanel(new BorderLayout());
 
+		mainInfoPanel.setOpaque(false);
+
 		mainInfoPanel.add(photo, BorderLayout.CENTER);
 		mainInfoPanel.add(basicInfo, BorderLayout.SOUTH);
 
 		// BIOGRAPHY //
 
 		JPanel extInfo = new JPanel();
+		extInfo.setOpaque(false);
 		extInfo.setLayout(new GridBagLayout());
 
 		bioHeader = new JLabel();
 		bioParagraph = new JTextArea();
+
+		bioParagraph.setBounds(bioParagraph.getX(), bioParagraph.getY(), 300,
+				bioParagraph.getHeight());
+
 		bioParagraph.setFocusable(false); // Make bio uneditable
 		bioParagraph.setLineWrap(true);
 		bioParagraph.setWrapStyleWord(true);
@@ -112,6 +144,7 @@ public class SwipeView extends JFrame
 
 		// Create a container panel for the buttons with a box layout
 		JPanel buttonPanel = new JPanel();
+		buttonPanel.setOpaque(false);
 		// Align them horizontally
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
@@ -148,6 +181,7 @@ public class SwipeView extends JFrame
 		add(buttonPanel, BorderLayout.SOUTH);
 
 		JPanel allInfoPanel = new JPanel();
+		allInfoPanel.setOpaque(false); // me
 		allInfoPanel.add(mainInfoPanel);
 		allInfoPanel.add(Box.createHorizontalStrut(10));
 		allInfoPanel.add(extInfo);

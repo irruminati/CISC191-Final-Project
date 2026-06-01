@@ -2,6 +2,7 @@
  * Lead Author(s):
  * 
  * @author Ale Hernandez
+ * @author Rumi Chadwick
  *
  *         Other Contributors:
  *         Alex Chow
@@ -24,10 +25,9 @@ import javax.swing.JTextField;
 import com.chandez.adoptme.controllers.AdoptionWindowController;
 
 /**
- * Purpose: The responsibility of AdoptionWindow is ...
+ * Purpose: The responsibility of AdoptionWindow is to outline how the window itself will look. 
  *
- * AdoptionWindow is-a ...
- * AdoptionWindow is ...
+ * AdoptionWindow is-a Window that pops after the user has gone through all the pets. 
  */
 public class AdoptionWindow extends JFrame
 {
@@ -53,14 +53,19 @@ public class AdoptionWindow extends JFrame
 	private static final short TITLE_FONT_SIZE = 24;
 	private static final short FIELD_CHAR_WIDTH = 15;
 
-	public AdoptionWindow()
+	public AdoptionWindow() //This will be the window that pops up after one pet is left. 
 	{
 		super();
 
+		//Title of the window 
 		setTitle("Adopt me");
+		//Minimum size of window 
 		setMinimumSize(new Dimension(400, 350));
+		//Close app when window is closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		// Main panel //
+		
 		userInfo = new JPanel();
 		BoxLayout boxLayout = new BoxLayout(userInfo, BoxLayout.Y_AXIS);
 		userInfo.setLayout(boxLayout);
@@ -68,37 +73,44 @@ public class AdoptionWindow extends JFrame
 				javax.swing.BorderFactory.createEmptyBorder(BORDER_PADDING,
 						BORDER_PADDING, BORDER_PADDING, BORDER_PADDING));
 
+		// Label at the the top 
 		titleLabel = new JLabel("User Information");
 		titleLabel.setAlignmentX(CENTER_ALIGNMENT);
 		titleLabel
 				.setFont(new Font(Font.SANS_SERIF, Font.BOLD, TITLE_FONT_SIZE));
 
+		// Name Panel //
 		namePanel = new JPanel();
 		userNameLabel = new JLabel("Name");
 		inputName = new JTextField(FIELD_CHAR_WIDTH);
 		namePanel.add(userNameLabel);
 		namePanel.add(inputName);
 
+		// Phone Panel //
 		phonePanel = new JPanel();
 		userPhoneLabel = new JLabel("Phone Number");
 		inputPhone = new JTextField(FIELD_CHAR_WIDTH);
 		phonePanel.add(userPhoneLabel);
 		phonePanel.add(inputPhone);
 
+		// Address Panel //
 		addressPanel = new JPanel();
 		userAddressLabel = new JLabel("Your Address");
 		inputAddress = new JTextField(FIELD_CHAR_WIDTH);
 		addressPanel.add(userAddressLabel);
 		addressPanel.add(inputAddress);
 
+		// Label/Message that will pop if there was a mistake with the information submitted.
 		errorLabel = new JLabel(" ");
 		errorLabel.setForeground(Color.RED);
 		errorLabel.setAlignmentX(CENTER_ALIGNMENT);
 
+		// Submit Panel with submit button.
 		submitPanel = new JPanel();
 		submitButton = new JButton("Submit");
 		submitPanel.add(submitButton);
 
+		//Adding everything to the main Panel
 		userInfo.add(titleLabel);
 		userInfo.add(namePanel);
 		userInfo.add(phonePanel);
@@ -111,6 +123,8 @@ public class AdoptionWindow extends JFrame
 		setVisible(true);
 	}
 
+	// SETTERS AND GETTERS //
+	
 	public String getInputAddress()
 	{
 		return inputAddress.getText();
@@ -131,27 +145,22 @@ public class AdoptionWindow extends JFrame
 		return submitButton;
 	}
 
+	// Setting the errorLabel to whichever error occurred (e.g Phone can only have numbers).
 	public void showError(String message)
 	{
 		errorLabel.setText(message);
 	}
 
+	//Clearing the error after it was fixed. 
 	public void clearError()
 	{
 		errorLabel.setText(" ");
 	}
 
+	//Closing the window after information was submitted or closed by the user. 
 	public void closeWindow()
 	{
 		dispose();
 	}
 
-//	public static void main(String[] args)
-//	{
-//		SwingUtilities.invokeLater(() -> {
-//			AdoptionWindow window = new AdoptionWindow();
-//			new AdoptionWindowController(window);
-//			window.setVisible(true);
-//		});
-//	}
 }

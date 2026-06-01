@@ -1,36 +1,32 @@
 /**
-* Lead Author(s):
-* @author alehzp; student ID
-* @author Full name; student ID
-* <<Add additional lead authors here>>
-*
-* Other Contributors:
-* Full name; student ID or contact information if not in class
-* <<Add additional contributors (mentors, tutors, friends) here, with contact information>>
-*
-* References:
-* Morelli, R., & Walde, R. (2016).
-* Java, Java, Java: Object-Oriented Problem Solving
-* https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
-*
-* <<Add more references here>>
+ * Lead Author(s):
+ * 
+ * @author Rumi Chadwick
+ * @author Ale Hernandez
+ *
+ *         Version: 2026-05-27
 *
 * Version: 2026-05-09
 */
 package com.chandez.adoptme.exceptions;
 
 /**
- * Purpose: The reponsibility of NameException is ...
+ * Purpose: The responsibility of NameException is to outline what to do if this exception is thrown 
  *
- * NameException is-a ...
- * NameException is ...
+ * NameException is-a Exception
  */
 public class NameException extends Exception
 {
+	//Sets the error message to "Please enter a valid name".
 	public NameException()
  {
 	 super("Please enter a valid name");
  }
+	/**
+	 * 
+	 * Purpose: To change the message displayed on the screen to the error for NameException. 
+	 * @param message the message for nameException error. 
+	 */
 	public NameException(String message)
 	{
 		super(message);

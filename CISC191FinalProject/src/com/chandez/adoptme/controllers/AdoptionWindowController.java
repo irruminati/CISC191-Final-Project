@@ -1,21 +1,9 @@
-/**
- * Lead Author(s):
+/** Lead Author(s):
  * 
- * @author alehzp; student ID
- * @author Full name; student ID
- *         <<Add additional lead authors here>>
+ * @author Rumi Chadwick
+ * @author Ale Hernandez
  *
- *         Other Contributors:
- *         Full name; student ID or contact information if not in class
- *         <<Add additional contributors (mentors, tutors, friends) here, with
- *         contact information>>
- *
- *         References:
- *         Morelli, R., & Walde, R. (2016).
- *         Java, Java, Java: Object-Oriented Problem Solving
- *         https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
- *
- *         <<Add more references here>>
+ *         Version: 2026-05-27
  *
  *         Version: 2026-05-10
  */
@@ -33,10 +21,9 @@ import com.chandez.adoptme.exceptions.UserValidator;
 import com.chandez.adoptme.ui.AdoptionWindow;
 
 /**
- * Purpose: The reponsibility of AdoptionWindowController is ...
+ * Purpose: The responsibility of AdoptionWindowController is to validate the information of the user, and focuses on the submit button.
  *
- * AdoptionWindowController is-a ...
- * AdoptionWindowController is ...
+ * AdoptionWindowController is-a controller for the "Submit" button.
  */
 public class AdoptionWindowController
 {
@@ -52,7 +39,11 @@ public class AdoptionWindowController
 		adoptionWindow.getSubmitButton()
 				.addActionListener(e -> submitUserInfo());
 	}
-
+	/**
+	 * 
+	 * Purpose: The purpose of this method is to take in the information put by the user and assure that it has been submitted. 
+	 * Also to catch any exceptions that the submitted info might throw
+	 */
 	private void submitUserInfo()
 	{
 		String name = adoptionWindow.getInputName();
@@ -63,16 +54,20 @@ public class AdoptionWindowController
 		{
 			UserValidator.validateAll(name, phone, address);
 
-			adoptionWindow.clearError();
+			adoptionWindow.clearError(); //if there was an error showing in the screen, after information was changed to be correct, 
+										 //this would clear the error. 
 
 			JOptionPane.showMessageDialog(adoptionWindow,
+
 					"Your information was submitted.\n" + pet.getName()
 							+ " can't wait to meet you!");
+			
 			adoptionWindow.closeWindow();
 		}
 		catch (NameException | AddressException | PhoneNumberException ex)
 		{
-			adoptionWindow.showError(ex.getMessage());
+			adoptionWindow.showError(ex.getMessage()); //gets an error from the try-catch block and shows the type of error it is 
+													   //(e.g. Name has numbers).
 		}
 	}
 }
